@@ -2,6 +2,8 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
+import 'detail_page.dart';
+
 class JobPool extends StatefulWidget {
   const JobPool({Key? key}) : super(key: key);
 
@@ -59,9 +61,23 @@ class _JobPoolState extends State<JobPool> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          _items[index].atananKisi,
-                          style: TextStyle(fontSize: 18),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              _items[index].atananKisi,
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            Container(
+                              color: Colors.grey[300],
+                              child: Text(
+                                "Çanakkale 18 Mart Üniversitesi",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
                         ),
                         Divider(
                           thickness: 2,
@@ -77,6 +93,24 @@ class _JobPoolState extends State<JobPool> {
                             ),
                             Text(
                               _items[index].tarih,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 180.0),
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => DetailPage()));
+                                },
+                                child: Text('Detay'),
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.orange,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(
+                                      5,
+                                    ))),
+                              ),
                             )
                           ],
                         ),
@@ -107,7 +141,7 @@ class _JobPoolState extends State<JobPool> {
                         Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                          children: const [
                             Icon(Icons.donut_large_sharp,
                                 color: Colors.orange, size: 16),
                             SizedBox(
@@ -122,13 +156,31 @@ class _JobPoolState extends State<JobPool> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Çanakkale 18 Mart Üni"),
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                                color: Colors.grey.shade400,
+                              ),
+                            ),
+                            // Padding(
+                            //   padding: const EdgeInsets.all(8.0),
+                            //   child: Text(
+                            //     "Çanakkale 18 Mart Üniversitesi",
+                            //     style: TextStyle(
+                            //         color: Colors.black,
+                            //         fontWeight: FontWeight.bold),
+                            //   ),
+                            // ),
                             Chip(
-                                visualDensity: VisualDensity(vertical: -2),
-                                backgroundColor: Colors.green,
-                                label: Text(
-                                  "Destek",
-                                )),
+                              visualDensity: VisualDensity(vertical: -2),
+                              backgroundColor: Colors.green,
+                              label: Container(
+                                width: 50,
+                                height: 16,
+                                child: Text('destek'),
+                              ),
+                            ),
                           ],
                         )
                       ])),

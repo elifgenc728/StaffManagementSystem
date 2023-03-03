@@ -185,28 +185,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       'Giriş Yap!',
                       style: TextStyle(fontSize: 17),
                     )), //
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Bir hesabınız yok mu ?',
-                      style: TextStyle(
-                        color: Colors.black.withOpacity(0.6),
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(builder: (context) => JobPool()));
-                      },
-                      child: Text(
-                        'Kayıt ol',
-                        style: TextStyle(
-                            color: Colors.orange, fontWeight: FontWeight.w500),
-                      ),
-                    )
-                  ],
-                ),
               ],
             ),
           ),
