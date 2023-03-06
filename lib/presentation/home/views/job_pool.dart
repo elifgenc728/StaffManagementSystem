@@ -56,118 +56,146 @@ class _JobPoolState extends State<JobPool> {
           itemCount: _items.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(12.0),
               child: Card(
-                child: Column(
-                  children: [
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                elevation: 3,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              _items[index].atananKisi,
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            Text(
+                              "Çanakkale 18 Mart Üniversitesi",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ]),
+                      Divider(
+                        thickness: 2,
+                      ),
+                      Column(
                         children: [
-                          Text(
-                            _items[index].atananKisi,
-                            style: TextStyle(fontSize: 18),
+                          SizedBox(
+                            height: 30,
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              elevation: 3,
+                              color: Colors.yellow,
+                              child: TextButton.icon(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.info_rounded, size: 13),
+                                  label: Text(
+                                    "Destek",
+                                    style: TextStyle(fontSize: 10),
+                                  )),
+                            ),
                           ),
-                          Text(
-                            "Çanakkale 18 Mart Üniversitesi",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ]),
-                    Divider(
-                      thickness: 2,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Row(
-                                children: [
-                                  Icon(Icons.calendar_today_outlined,
-                                      color: Colors.orange[900], size: 16),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Text(
-                                    _items[index].tarih,
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Icon(Icons.alarm_outlined,
-                                      color: Colors.orange[900], size: 16),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Text(
-                                    _items[index].saat,
-                                    style: TextStyle(),
-                                  )
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Icon(Icons.donut_large_sharp,
-                                      color: Colors.orange[900], size: 16),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Text(
-                                    "Refakatçi Makbuz Sorgulama Hakkında",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w500),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Row(
-                                children: [
-                                  ElevatedButton.icon(
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  DetailPage()));
-                                    },
-                                    label: Text('Detay'),
-                                    icon: Icon(Icons.arrow_right),
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.orange[900],
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                          5,
-                                        ))),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Chip(
-                                    visualDensity: VisualDensity(vertical: -2),
-                                    backgroundColor: Colors.green,
-                                    label: Container(
-                                      width: 50,
-                                      height: 16,
-                                      child: Text('destek'),
+                              Expanded(
+                                flex: 6,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(Icons.calendar_today_outlined,
+                                            color: Colors.orange[900],
+                                            size: 16),
+                                        SizedBox(
+                                          width: 8,
+                                        ),
+                                        Text(
+                                          _items[index].tarih,
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                ],
+                                    Row(
+                                      children: [
+                                        Icon(Icons.alarm_outlined,
+                                            color: Colors.orange[900],
+                                            size: 16),
+                                        SizedBox(
+                                          width: 8,
+                                        ),
+                                        Text(
+                                          _items[index].saat,
+                                          style: TextStyle(),
+                                        )
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(Icons.donut_large_sharp,
+                                            color: Colors.orange[900],
+                                            size: 16),
+                                        SizedBox(
+                                          width: 8,
+                                        ),
+                                        Text(
+                                          "Refakatçi Makbuz Sorgulama Hakkında",
+                                          maxLines: 3,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Column(
+                                  children: [
+                                    ElevatedButton.icon(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    DetailPage()));
+                                      },
+                                      label: Text(
+                                        'Detay',
+                                        style: TextStyle(fontSize: 13),
+                                      ),
+                                      icon: Icon(Icons.arrow_right),
+                                      style: ElevatedButton.styleFrom(
+                                          backgroundColor: Colors.orange[900],
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                            5,
+                                          ))),
+                                    ),
+                                    Chip(
+                                      visualDensity:
+                                          VisualDensity(vertical: -2),
+                                      backgroundColor: Colors.green,
+                                      label: Container(
+                                        width: 50,
+                                        height: 16,
+                                        child: Text('Destek'),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),
                         ],
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             );
