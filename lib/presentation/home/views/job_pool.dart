@@ -25,13 +25,13 @@ class _JobPoolState extends State<JobPool> {
           saat: '11:04',
           durum: 'devam ediyor'),
       CollectionModel(
-          atananKisi: ' Elif GENÇ',
+          atananKisi: ' Sema ŞAHİN',
           gonderenKisi: 'Mehmet YILMAZ',
           tarih: '26.04.2023',
           saat: '12:15',
           durum: 'devam ediyor'),
       CollectionModel(
-          atananKisi: ' Elif GENÇ',
+          atananKisi: ' Ali ÖZTEN',
           gonderenKisi: 'Mehmet YILMAZ',
           tarih: '26.04.2023',
           saat: '16:44',
@@ -49,7 +49,7 @@ class _JobPoolState extends State<JobPool> {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Drawer()));
             },
-            icon: Icon(Icons.menu_sharp)),
+            icon: Icon(Icons.menu)),
         title: Text('HBYS Destek Sistemi'),
       ),
       body: ListView.builder(
@@ -96,6 +96,30 @@ class _JobPoolState extends State<JobPool> {
                                     _items[index].tarih,
                                   ),
                                 ],
+            return Card(
+              child: Padding(
+                  padding: EdgeInsets.all(30.0),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              _items[index].atananKisi,
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.grey[300],
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                              child: Text(
+                                "Çanakkale 18 Mart Üniversitesi",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
                               ),
                               Row(
                                 children: [
