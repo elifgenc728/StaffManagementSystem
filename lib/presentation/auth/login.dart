@@ -170,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0)),
-                        backgroundColor: Colors.orange,
+                        backgroundColor: Colors.orange[900],
                         padding: EdgeInsets.symmetric(
                             horizontal: MediaQuery.of(context).size.width / 3.3,
                             vertical: 20)

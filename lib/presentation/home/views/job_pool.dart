@@ -43,6 +43,7 @@ class _JobPoolState extends State<JobPool> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         leading: IconButton(
             onPressed: () {
               Navigator.push(
@@ -54,6 +55,47 @@ class _JobPoolState extends State<JobPool> {
       body: ListView.builder(
           itemCount: _items.length,
           itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                child: Column(
+                  children: [
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            _items[index].atananKisi,
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          Text(
+                            "Çanakkale 18 Mart Üniversitesi",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ]),
+                    Divider(
+                      thickness: 2,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(Icons.calendar_today_outlined,
+                                      color: Colors.orange[900], size: 16),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    _items[index].tarih,
+                                  ),
+                                ],
             return Card(
               child: Padding(
                   padding: EdgeInsets.all(30.0),
@@ -79,114 +121,79 @@ class _JobPoolState extends State<JobPool> {
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
                               ),
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          thickness: 2,
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Icon(Icons.calendar_today_outlined,
-                                color: Colors.orange, size: 16),
-                            SizedBox(
-                              width: 8,
-                            ),
-                            Text(
-                              _items[index].tarih,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 180.0),
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => DetailPage()));
-                                },
-                                child: Text('Detay'),
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.orange,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(
-                                      5,
-                                    ))),
+                              Row(
+                                children: [
+                                  Icon(Icons.alarm_outlined,
+                                      color: Colors.orange[900], size: 16),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    _items[index].saat,
+                                    style: TextStyle(),
+                                  )
+                                ],
                               ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Icon(Icons.alarm_outlined,
-                                color: Colors.orange, size: 16),
-                            SizedBox(
-                              width: 8,
-                            ),
-                            Text(
-                              _items[index].saat,
-                              style: TextStyle(),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 12,
-                        ),
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Icon(Icons.donut_large_sharp,
-                                color: Colors.orange, size: 16),
-                            SizedBox(
-                              width: 8,
-                            ),
-                            Text(
-                              "Refakatçi Makbuz Sorgulama Hakkında",
-                              style: TextStyle(fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                color: Colors.grey.shade400,
+                              Row(
+                                children: [
+                                  Icon(Icons.donut_large_sharp,
+                                      color: Colors.orange[900], size: 16),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    "Refakatçi Makbuz Sorgulama Hakkında",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w500),
+                                  ),
+                                ],
                               ),
-                            ),
-                            // Padding(
-                            //   padding: const EdgeInsets.all(8.0),
-                            //   child: Text(
-                            //     "Çanakkale 18 Mart Üniversitesi",
-                            //     style: TextStyle(
-                            //         color: Colors.black,
-                            //         fontWeight: FontWeight.bold),
-                            //   ),
-                            // ),
-                            Chip(
-                              visualDensity: VisualDensity(vertical: -2),
-                              backgroundColor: Colors.green,
-                              label: Container(
-                                width: 50,
-                                height: 16,
-                                child: Text('destek'),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  ElevatedButton.icon(
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DetailPage()));
+                                    },
+                                    label: Text('Detay'),
+                                    icon: Icon(Icons.arrow_right),
+                                    style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.orange[900],
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(
+                                          5,
+                                        ))),
+                                  ),
+                                ],
                               ),
-                            ),
-                          ],
-                        )
-                      ])),
+                              Row(
+                                children: [
+                                  Chip(
+                                    visualDensity: VisualDensity(vertical: -2),
+                                    backgroundColor: Colors.green,
+                                    label: Container(
+                                      width: 50,
+                                      height: 16,
+                                      child: Text('destek'),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             );
           }),
     );
