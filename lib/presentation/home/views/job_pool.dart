@@ -25,13 +25,13 @@ class _JobPoolState extends State<JobPool> {
           saat: '11:04',
           durum: 'devam ediyor'),
       CollectionModel(
-          atananKisi: ' Elif GENÇ',
+          atananKisi: ' Sema ŞAHİN',
           gonderenKisi: 'Mehmet YILMAZ',
           tarih: '26.04.2023',
           saat: '12:15',
           durum: 'devam ediyor'),
       CollectionModel(
-          atananKisi: ' Elif GENÇ',
+          atananKisi: ' Ali ÖZTEN',
           gonderenKisi: 'Mehmet YILMAZ',
           tarih: '26.04.2023',
           saat: '16:44',
@@ -49,7 +49,7 @@ class _JobPoolState extends State<JobPool> {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Drawer()));
             },
-            icon: Icon(Icons.menu_sharp)),
+            icon: Icon(Icons.menu)),
         title: Text('HBYS Destek Sistemi'),
       ),
       body: ListView.builder(
