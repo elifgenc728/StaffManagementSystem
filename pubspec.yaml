@@ -29,7 +29,9 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
-    sdk: flutter
+    sdk: flutter  
+  
+  syncfusion_flutter_charts: ^20.4.53
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -37,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   expansion_tile_card: ^2.0.0
   intl: ^0.17.0
+
 
 
 dev_dependencies:

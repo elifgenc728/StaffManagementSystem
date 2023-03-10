@@ -2,6 +2,9 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
+import '../../widget/custom_drawer.dart';
+import '../../widget/custom_dropdown.dart';
+import '../../widget/custom_textbutton.dart';
 import 'detail_page.dart';
 
 class JobPool extends StatefulWidget {
@@ -13,6 +16,7 @@ class JobPool extends StatefulWidget {
 
 class _JobPoolState extends State<JobPool> {
   late final List<CollectionModel> _items;
+  GlobalKey<ScaffoldState> _scaffoldState = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -41,147 +45,166 @@ class _JobPoolState extends State<JobPool> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Drawer()));
-            },
-            icon: Icon(Icons.menu)),
-        title: Text('HBYS Destek Sistemi'),
-      ),
-      body: ListView.builder(
-          itemCount: _items.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                child: Column(
-                  children: [
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            _items[index].atananKisi,
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          Text(
-                            "Çanakkale 18 Mart Üniversitesi",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ]),
-                    Divider(
-                      thickness: 2,
-                    ),
-                    Padding(
+    return SafeArea(
+      child: Scaffold(
+          key: _scaffoldState,
+          drawer: NavBar(),
+          appBar: AppBar(
+            leading: IconButton(
+                onPressed: () {
+                  _scaffoldState.currentState?.openDrawer();
+                },
+                icon: Icon(Icons.menu)),
+            title: Text('Genel İş Havuzu'),
+          ),
+          body: ListView.builder(
+              itemCount: _items.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Card(
+                    elevation: 50,
+                    child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      child: Column(
                         children: [
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  _items[index].atananKisi,
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                                Text(
+                                  "Çanakkale 18 Mart Üniversitesi",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ]),
+                          Divider(
+                            thickness: 2,
+                          ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
                                 children: [
-                                  Icon(Icons.calendar_today_outlined,
-                                      color: Colors.orange[900], size: 16),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Text(
-                                    _items[index].tarih,
-                                  ),
-                                ],
-            return Card(
-              child: Padding(
-                  padding: EdgeInsets.all(30.0),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              _items[index].atananKisi,
-                              style: TextStyle(fontSize: 18),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.grey[300],
-                                borderRadius: BorderRadius.circular(100),
-                              ),
-                              child: Text(
-                                "Çanakkale 18 Mart Üniversitesi",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Row(
-                                children: [
-                                  Icon(Icons.alarm_outlined,
-                                      color: Colors.orange[900], size: 16),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Text(
-                                    _items[index].saat,
-                                    style: TextStyle(),
-                                  )
-                                ],
-                              ),
-                              Row(
-                                children: [
                                   Icon(Icons.donut_large_sharp,
-                                      color: Colors.orange[900], size: 16),
+                                      color: Colors.blue[900], size: 16),
                                   SizedBox(
                                     width: 8,
                                   ),
-                                  Text(
-                                    "Refakatçi Makbuz Sorgulama Hakkında",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w500),
+                                  Expanded(
+                                    flex: 1,
+                                    child: Text(
+                                      "Refakatçi Makbuz Sorgulama Hakkında Bilgileri güncellem",
+                                      maxLines: 2,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
                                   ),
                                 ],
                               ),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Row(
-                                children: [
-                                  ElevatedButton.icon(
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  DetailPage()));
-                                    },
-                                    label: Text('Detay'),
-                                    icon: Icon(Icons.arrow_right),
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.orange[900],
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                          5,
-                                        ))),
-                                  ),
-                                ],
+                              SizedBox(
+                                height: 1,
                               ),
                               Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Chip(
-                                    visualDensity: VisualDensity(vertical: -2),
-                                    backgroundColor: Colors.green,
-                                    label: Container(
-                                      width: 50,
-                                      height: 16,
-                                      child: Text('destek'),
+                                  Expanded(
+                                    flex: 4,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(Icons.calendar_today_outlined,
+                                                color: Colors.blue[900],
+                                                size: 16),
+                                            SizedBox(
+                                              width: 8,
+                                            ),
+                                            Text(
+                                              _items[index].tarih,
+                                            ),
+                                            Text(' - '),
+                                            Text(
+                                              _items[index].saat,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 8,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.person,
+                                              size: 16,
+                                              color: Colors.blue[900],
+                                            ),
+                                            SizedBox(
+                                              width: 8,
+                                            ),
+                                            Text(
+                                              _items[index].gonderenKisi,
+                                              style: TextStyle(fontSize: 15),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 8,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.app_registration_rounded,
+                                              color: Colors.blue[900],
+                                              size: 16,
+                                            ),
+                                            SizedBox(
+                                              width: 8,
+                                            ),
+                                            Text('211088'),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Expanded(
+                                    flex: 3,
+                                    child: Column(
+                                      children: [
+                                        ElevatedButton.icon(
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        DetailPage()));
+                                          },
+                                          label: Text(
+                                            'Detay',
+                                            style: TextStyle(
+                                              fontSize: 13,
+                                            ),
+                                            maxLines: 2,
+                                          ),
+                                          icon: Icon(Icons.arrow_right),
+                                        ),
+                                        CustomTextButton(),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 10,
+                                              top: 5,
+                                              right: 10,
+                                              bottom: 20),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
@@ -191,11 +214,9 @@ class _JobPoolState extends State<JobPool> {
                         ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-            );
-          }),
+                  ),
+                );
+              })),
     );
   }
 }
