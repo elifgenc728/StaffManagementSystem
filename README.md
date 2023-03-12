@@ -1,3 +1,3 @@
 # mia_support_system project
 
-contributed by: Elif GENÇ
+contributed by: Elif GENÇ d
