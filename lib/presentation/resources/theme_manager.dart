@@ -8,14 +8,16 @@ ThemeData getThemeData() {
         elevation: 5,
       ),
       inputDecorationTheme: InputDecorationTheme(
+        
         focusedBorder: UnderlineInputBorder(
+          
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(Radius.circular(10))),
         enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(Radius.circular(10))),
 
-        labelStyle: TextStyle(color: Colors.blue[900]),
+        labelStyle: TextStyle(color: Colors.grey[800]),
         // suffixIcon: IconButton(
         //     onPressed: () {},
         //     icon: Icon(Icons.close,

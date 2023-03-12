@@ -9,20 +9,19 @@ class Constants {
   static const Color background = Color.fromARGB(255, 243, 243, 249);
   static const String fontName = 'Roboto';
   static const String mainScreenRoute = '/main';
-  static const String userPath = 'Colleges/PICT/Users';
-  static const String doubtPath = 'Colleges/PICT/Doubts';
+ 
   static final progressIndicator = Center(
     child: SizedBox(
       height: 200,
       width: 200,
-      //child: Lottie.asset('assets/images/loading_lottie.json'),
+    
     ),
   );
   static final errorLottie = Center(
       child: SizedBox(
     height: 300,
     width: 300,
-    //child: Lottie.asset('assets/images/error_lottie.json'),
+
   ));
 
   static BoxShadow boxShadow = BoxShadow(

@@ -22,12 +22,12 @@ class _CustomDropdownState extends State<CustomDropdown> {
         ),
       ),
       value: dropdownValue,
-      icon: Icon(Icons.arrow_downward_sharp, size: 15, color: Colors.blue[900]),
+      icon: Icon(Icons.arrow_downward_sharp, size: 15, color: Colors.grey[800]),
       elevation: 16,
-      style: TextStyle(color: Colors.blue[900], fontWeight: FontWeight.w500),
+      style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.w500),
       underline: Container(
-        height: 2,
-        color: Colors.blue[900],
+        height: 1.25,
+        color: Colors.grey[800],
       ),
       onChanged: (String? value) {
         setState(() {

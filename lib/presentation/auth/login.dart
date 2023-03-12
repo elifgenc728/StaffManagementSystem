@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       children: [
                         Container(
-                          height: isEmailCorrect! ? 280 : 200,
+                          height: isEmailCorrect ? 280 : 200,
                           // _formKey!.currentState!.validate() ? 200 : 600,
                           // height: isEmailCorrect ? 260 : 182,
                           width: MediaQuery.of(context).size.width / 1.1,
@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                                 validator: (value) {
-                                  if (value!.isEmpty && value!.length < 5) {
+                                  if (value!.isEmpty && value.length < 5) {
                                     return 'Enter a valid password';
                                     {
                                       return null;

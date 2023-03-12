@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mia_support_system/presentation/auth/login.dart';
 import 'package:mia_support_system/presentation/home/views/job_pool.dart';
+import 'package:mia_support_system/presentation/home/views/new_job_page.dart';
 
 import '../home/views/panel_page.dart';
 
@@ -29,16 +30,26 @@ class NavBar extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PanelPage()));
-              },
+              // onTap: () {
+              //   Navigator.push(context,
+              //       MaterialPageRoute(builder: (context) => PanelPage()));
+              // },
               child: ListTile(
                 leading: Icon(Icons.bar_chart),
                 title: Text(
                   'Panel',
                 ),
               ),
+            ),
+            GestureDetector(
+             onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => NewJobPage()));
+              },
+              child: ListTile(
+                leading: Icon(Icons.post_add_rounded),
+                title: Text('Yeni İş / Hata Ekle'),
+              )
             ),
             GestureDetector(
               onTap: () {
@@ -50,7 +61,12 @@ class NavBar extends StatelessWidget {
                 title: Text('Genel İş Havuzu'),
               ),
             ),
-            GestureDetector(
+          Divider(
+            thickness: 2,
+            endIndent: 100,
+            indent: 20,
+          ),
+          GestureDetector(
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => LoginScreen()));

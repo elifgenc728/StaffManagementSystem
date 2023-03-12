@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:mia_support_system/presentation/home/views/job_pool.dart';
 
+import '../../widget/custom_mesaggealertdialog.dart';
+
 class DetailPage extends StatefulWidget {
   @override
   _DetailPageState createState() => _DetailPageState();
@@ -11,7 +13,7 @@ enum Durum { d1, d2, d3, d4 }
 
 class _DetailPageState extends State<DetailPage> {
   final GlobalKey<ExpansionTileCardState> cardA = new GlobalKey();
-  Durum? _durum = Durum.d1;
+  Durum? durum = Durum.d1;
   TextEditingController textEditingController =
       TextEditingController(text: "Konu hakkındaki bilgiler burada olacak");
 
@@ -33,7 +35,7 @@ class _DetailPageState extends State<DetailPage> {
         child: ListView(
           children: <Widget>[
             ExpansionTileCard(
-              baseColor: Colors.cyan[20],
+              baseColor: Colors.blue[50],
               expandedColor: Colors.red[50],
               key: cardA,
               // leading:
@@ -144,6 +146,11 @@ class _DetailPageState extends State<DetailPage> {
                   ListTile(
                     leading: Text("Konu:gfdgdgdf "),
                   ),
+                   Divider(
+                    thickness: 1.5,
+                    indent: 30,
+                    endIndent: 100,
+                  ),
                   Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 16,
@@ -181,6 +188,11 @@ class _DetailPageState extends State<DetailPage> {
                   ListTile(
                     leading: Text("Konu:gfdgdgdf "),
                   ),
+                  Divider(
+                    thickness: 1.5,
+                    indent: 30,
+                    endIndent: 100,
+                  ),
                   Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 16,
@@ -210,111 +222,7 @@ class _DetailPageState extends State<DetailPage> {
                 return StatefulBuilder(
                   builder: (context, setState) {
                     return SingleChildScrollView(
-                      child: AlertDialog(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        icon: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              "Yeni Mesaj Gönder",
-                              style: Theme.of(context).textTheme.headline6,
-                            ),
-                            Align(
-                                alignment: Alignment.topRight,
-                                child: IconButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    icon: Icon(Icons.close))),
-                          ],
-                        ),
-                        content: Column(
-                          children: [
-                            CustomBorderTextField(
-                              prefixIcon: Icons.subject_outlined,
-                              labelText: "Konu",
-                            ),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            CustomBorderTextField(
-                                prefixIcon: Icons.message_outlined,
-                                labelText: "Mesajınız"),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                ListTile(
-                                  contentPadding: EdgeInsets.all(0),
-                                  title: const Text('Çözüldü'),
-                                  leading: Radio<Durum>(
-                                    value: Durum.d1,
-                                    groupValue: _durum,
-                                    onChanged: (Durum? value) {
-                                      setState(() {
-                                        _durum = value;
-                                      });
-                                    },
-                                  ),
-                                ),
-                                ListTile(
-                                  contentPadding: EdgeInsets.all(0),
-                                  title: const Text('İlgileniliyor'),
-                                  leading: Radio<Durum>(
-                                    value: Durum.d2,
-                                    groupValue: _durum,
-                                    onChanged: (Durum? value) {
-                                      setState(() {
-                                        _durum = value;
-                                      });
-                                    },
-                                  ),
-                                ),
-                                ListTile(
-                                  contentPadding: EdgeInsets.all(0),
-                                  title: const Text('Yapılmayacak'),
-                                  leading: Radio<Durum>(
-                                    value: Durum.d3,
-                                    groupValue: _durum,
-                                    onChanged: (Durum? value) {
-                                      setState(() {
-                                        _durum = value;
-                                      });
-                                    },
-                                  ),
-                                ),
-                                ListTile(
-                                  contentPadding: EdgeInsets.all(0),
-                                  title: const Text('Kapatıldı'),
-                                  leading: Radio<Durum>(
-                                    value: Durum.d4,
-                                    groupValue: _durum,
-                                    onChanged: (Durum? value) {
-                                      setState(() {
-                                        _durum = value;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        actions: <Widget>[
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.blue[900]),
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: Text(
-                              "Gönder",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        ],
-                      ),
+                      child: Custom_MessageAlertDialog(context, setState),
                     );
                   },
                 );
@@ -323,6 +231,8 @@ class _DetailPageState extends State<DetailPage> {
           }),
     );
   }
+
+  
 }
 
 class CustomBorderTextField extends StatelessWidget {
@@ -330,10 +240,14 @@ class CustomBorderTextField extends StatelessWidget {
     super.key,
     this.labelText,
     this.prefixIcon,
+    this.height,
+    this.width,
   });
 
   final String? labelText;
   final IconData? prefixIcon;
+  final int? height;
+  final int? width;
 
   @override
   Widget build(BuildContext context) {
@@ -353,7 +267,7 @@ class CustomBorderTextField extends StatelessWidget {
         ),
         prefixIcon: Icon(
           prefixIcon,
-          color: Colors.blue[900],
+          color: Colors.grey,
         ),
         labelText: labelText,
         contentPadding: EdgeInsets.symmetric(vertical: 20),

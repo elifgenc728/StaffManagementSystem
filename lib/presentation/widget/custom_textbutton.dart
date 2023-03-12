@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mia_support_system/presentation/widget/custom_user_alertdialog.dart';
 
 import 'custom_bottom_sheet.dart';
 
@@ -10,6 +11,8 @@ class CustomTextButton extends StatefulWidget {
 }
 
 class _CustomTextButtonState extends State<CustomTextButton> {
+  Type? get stateSetter => null;
+
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -26,10 +29,23 @@ class _CustomTextButtonState extends State<CustomTextButton> {
                   color: Colors.blue[900])),
         ],
       ),
-      onPressed: () {
-        // Navigator.push(context,
-        //     MaterialPageRoute(builder: (context) => CustomBottomSheet()));
-      },
+      
+        onPressed: () {
+            showDialog(
+              barrierDismissible: false,
+              context: context,
+              builder: (context) {
+                return StatefulBuilder(
+                  builder: (context, setState) {
+                    return SingleChildScrollView(
+                      child: Custom_UserAlertDialog(context, setState),
+                    );
+                  },
+                );
+              },
+            );
+          },
+      
     );
   }
 }

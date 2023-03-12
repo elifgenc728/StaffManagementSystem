@@ -98,7 +98,7 @@ class _JobPoolState extends State<JobPool> {
                                   Expanded(
                                     flex: 1,
                                     child: Text(
-                                      "Refakatçi Makbuz Sorgulama Hakkında Bilgileri güncellem",
+                                      "Refakatçi Makbuz Sorgulama Hakkında Bilgileri güncelleme",
                                       maxLines: 2,
                                       style: TextStyle(
                                         fontWeight: FontWeight.w500,
