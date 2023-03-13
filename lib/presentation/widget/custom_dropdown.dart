@@ -26,7 +26,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
       elevation: 16,
       style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.w500),
       underline: Container(
-        height: 1.25,
+        height: 1.20,
         color: Colors.grey[800],
       ),
       onChanged: (String? value) {
@@ -40,6 +40,41 @@ class _CustomDropdownState extends State<CustomDropdown> {
           child: Text(value),
         );
       }).toList(),
+    );
+  }
+}
+
+class CustomTimeDropdownWidget extends StatefulWidget {
+  const CustomTimeDropdownWidget({super.key, required this.dropdownList});
+  final List<String> dropdownList;
+
+  @override
+  State<CustomTimeDropdownWidget> createState() =>
+      _CustomTimeDropdownWidgetState();
+}
+
+class _CustomTimeDropdownWidgetState extends State<CustomTimeDropdownWidget> {
+  @override
+  Widget build(BuildContext context) {
+    String timeChoose = widget.dropdownList.first;
+    return Container(
+      width: 5,
+      child: DropdownButton(
+        value: timeChoose,
+        onChanged: (String? value) {
+          setState(() {
+            timeChoose = value!;
+          });
+        },
+        items:
+            widget.dropdownList.map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+           
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+      ),
     );
   }
 }

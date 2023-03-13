@@ -39,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   expansion_tile_card: ^2.0.0
   intl: ^0.17.0
+  interval_time_picker: ^2.0.0+5
 
 
 

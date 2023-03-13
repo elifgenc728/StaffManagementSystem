@@ -36,7 +36,7 @@ class _DetailPageState extends State<DetailPage> {
           children: <Widget>[
             ExpansionTileCard(
               baseColor: Colors.blue[50],
-              expandedColor: Colors.red[50],
+              expandedColor: Colors.white,
               key: cardA,
               // leading:
               //     CircleAvatar(child: Image.asset("assets/images/devs.jpg")),
@@ -146,7 +146,7 @@ class _DetailPageState extends State<DetailPage> {
                   ListTile(
                     leading: Text("Konu:gfdgdgdf "),
                   ),
-                   Divider(
+                  Divider(
                     thickness: 1.5,
                     indent: 30,
                     endIndent: 100,
@@ -231,8 +231,6 @@ class _DetailPageState extends State<DetailPage> {
           }),
     );
   }
-
-  
 }
 
 class CustomBorderTextField extends StatelessWidget {
@@ -241,13 +239,13 @@ class CustomBorderTextField extends StatelessWidget {
     this.labelText,
     this.prefixIcon,
     this.height,
-    this.width,
+    this.hintText,
   });
 
   final String? labelText;
   final IconData? prefixIcon;
   final int? height;
-  final int? width;
+  final String? hintText;
 
   @override
   Widget build(BuildContext context) {
