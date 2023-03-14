@@ -3,6 +3,7 @@ import 'package:mia_support_system/presentation/home/views/detail_page.dart';
 import 'package:mia_support_system/presentation/widget/custom_dropdown.dart';
 
 import '../../widget/custom_chipwidget.dart';
+import '../../widget/custom_radiobutton.dart';
 import '../../widget/customadd_dropdown.dart';
 
 class NewJobPage extends StatefulWidget {
@@ -23,7 +24,7 @@ class _NewJobPageState extends State<NewJobPage> {
           child: Column(
             children: [
               SizedBox(
-                height: 18,
+                height: 10,
               ),
               Center(
                 child: Container(
@@ -97,32 +98,46 @@ class _NewJobPageState extends State<NewJobPage> {
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: 20,
               ),
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(padding: const EdgeInsets.only(left: 32.0))),
-              Text('Konu'),
-              Container(
-                  padding: EdgeInsets.only(left: 30, right: 35, top: 4),
-                  child: CustomBorderTextField()),
-              SizedBox(
-                height: 40,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Konu',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Container(
+                      width: 270, height: 35, child: CustomBorderTextField()),
+                ],
               ),
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(padding: const EdgeInsets.only(left: 32.0))),
-              Text('Mesajınız'),
-              Container(
-                  padding: EdgeInsets.only(left: 30, right: 35, top: 4),
-                  child: CustomBorderTextField()),
               SizedBox(
-                height: 40,
+                height: 18,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Mesajınız',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Container(width: 270, child: CustomBorderTextField()),
+                ],
+              ),
+              SizedBox(
+                height: 18,
               ),
               Custom_ChipWidget(),
               SizedBox(
-                height: 20,
+                height: 0,
               ),
+              CustomRequestRadiobutton(),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue[900],

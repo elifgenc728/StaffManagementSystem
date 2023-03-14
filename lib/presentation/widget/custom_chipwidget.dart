@@ -13,10 +13,10 @@ class _MyThreeOptionsState extends State<Custom_ChipWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text('Önem Seviyesi:'),
+        Text('Önem Seviyesi:', style: TextStyle(fontWeight: FontWeight.bold)),
         Wrap(
           alignment: WrapAlignment.start,
-          spacing: 12.0,
+          spacing: 50.0,
           children: <Widget>[
             ChoiceChip(
               pressElevation: 0.0,

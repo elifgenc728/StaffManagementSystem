@@ -30,26 +30,16 @@ class NavBar extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              // onTap: () {
-              //   Navigator.push(context,
-              //       MaterialPageRoute(builder: (context) => PanelPage()));
-              // },
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PanelPage()));
+              },
               child: ListTile(
                 leading: Icon(Icons.bar_chart),
                 title: Text(
                   'Panel',
                 ),
               ),
-            ),
-            GestureDetector(
-             onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => NewJobPage()));
-              },
-              child: ListTile(
-                leading: Icon(Icons.post_add_rounded),
-                title: Text('Yeni İş / Hata Ekle'),
-              )
             ),
             GestureDetector(
               onTap: () {
@@ -61,12 +51,21 @@ class NavBar extends StatelessWidget {
                 title: Text('Genel İş Havuzu'),
               ),
             ),
-          Divider(
-            thickness: 2,
-            endIndent: 100,
-            indent: 20,
-          ),
-          GestureDetector(
+            GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => NewJobPage()));
+                },
+                child: ListTile(
+                  leading: Icon(Icons.post_add_rounded),
+                  title: Text('Yeni İş / Hata Ekle'),
+                )),
+            Divider(
+              thickness: 2,
+              endIndent: 100,
+              indent: 20,
+            ),
+            GestureDetector(
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => LoginScreen()));
