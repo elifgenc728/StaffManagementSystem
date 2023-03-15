@@ -16,7 +16,6 @@ class JobPool extends StatefulWidget {
 
 class _JobPoolState extends State<JobPool> {
   late final List<CollectionModel> _items;
-  GlobalKey<ScaffoldState> _scaffoldState = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -47,14 +46,14 @@ class _JobPoolState extends State<JobPool> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          key: _scaffoldState,
-          drawer: NavBar(),
           appBar: AppBar(
             leading: IconButton(
-                onPressed: () {
-                  _scaffoldState.currentState?.openDrawer();
-                },
-                icon: Icon(Icons.menu)),
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            automaticallyImplyLeading: false,
             title: Text('Genel İş Havuzu'),
           ),
           body: ListView.builder(

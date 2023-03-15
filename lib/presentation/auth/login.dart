@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mia_support_system/presentation/home/views/panel_page.dart';
 
 import '../home/views/job_pool.dart';
 
@@ -113,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => JobPool()));
+                                              builder: (context) => PanelPage()));
                                     },
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(
