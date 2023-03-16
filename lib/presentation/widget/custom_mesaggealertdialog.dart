@@ -32,6 +32,7 @@ StatefulBuilder Custom_MessageAlertDialog(
           CustomBorderTextField(
             prefixIcon: Icons.subject_outlined,
             labelText: "Konu",
+           
           ),
           SizedBox(
             height: 12,
@@ -46,6 +47,7 @@ StatefulBuilder Custom_MessageAlertDialog(
             height: 2,
             labelText: "Email",
             hintText: "example@miateknoloji.com",
+            
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,

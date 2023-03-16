@@ -268,6 +268,7 @@ class CustomBorderTextField extends StatelessWidget {
           color: Colors.grey,
         ),
         labelText: labelText,
+        hintText: hintText,
         contentPadding: EdgeInsets.symmetric(vertical: 20),
       ),
     );

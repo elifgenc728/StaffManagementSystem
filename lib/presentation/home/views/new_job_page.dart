@@ -5,6 +5,7 @@ import 'package:mia_support_system/presentation/widget/custom_dropdown.dart';
 import '../../widget/custom_chipwidget.dart';
 import '../../widget/custom_radiobutton.dart';
 import '../../widget/customadd_dropdown.dart';
+import '../../widget/customradiobutton.dart';
 
 class NewJobPage extends StatefulWidget {
   const NewJobPage({super.key});
@@ -30,7 +31,6 @@ class _NewJobPageState extends State<NewJobPage> {
                 child: Container(
                   width: 350,
                   height: 150,
-                  color: Colors.blue[50],
                   child: Card(
                     elevation: 10,
                     shape: RoundedRectangleBorder(
@@ -111,7 +111,11 @@ class _NewJobPageState extends State<NewJobPage> {
                     ),
                   ),
                   Container(
-                      width: 270, height: 35, child: CustomBorderTextField()),
+                      width: 350,
+                      height: 50,
+                      child: CustomBorderTextField(
+                        prefixIcon: Icons.subject,
+                      )),
                 ],
               ),
               SizedBox(
@@ -127,7 +131,12 @@ class _NewJobPageState extends State<NewJobPage> {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Container(width: 270, child: CustomBorderTextField()),
+                  Container(
+                      width: 350,
+                      child: CustomBorderTextField(
+                        height: 200,
+                        prefixIcon: Icons.message_rounded,
+                      )),
                 ],
               ),
               SizedBox(
@@ -137,7 +146,7 @@ class _NewJobPageState extends State<NewJobPage> {
               SizedBox(
                 height: 0,
               ),
-              CustomRequestRadiobutton(),
+              // FittedBox(child: CustomRadioButton()),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue[900],

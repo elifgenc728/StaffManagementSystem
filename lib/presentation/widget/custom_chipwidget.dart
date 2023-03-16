@@ -26,7 +26,7 @@ class _MyThreeOptionsState extends State<Custom_ChipWidget> {
               selected: _value == 0,
               onSelected: (bool selected) {
                 setState(() {
-                  _value = (selected ? 0 : null)!;
+                  _value = (selected ? 0 : 1);
                 });
               },
             ),
@@ -38,7 +38,7 @@ class _MyThreeOptionsState extends State<Custom_ChipWidget> {
               selected: _value == 1,
               onSelected: (bool selected) {
                 setState(() {
-                  _value = (selected ? 1 : null)!;
+                  _value = (selected ? 1 : 0);
                 });
               },
             ),
@@ -48,3 +48,4 @@ class _MyThreeOptionsState extends State<Custom_ChipWidget> {
     );
   }
 }
+//filterchip
