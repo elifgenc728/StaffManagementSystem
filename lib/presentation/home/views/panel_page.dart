@@ -103,7 +103,7 @@ class _PanelPageState extends State<PanelPage> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      "Kullanıcıların Genel İstek Çözme İstatistikleri",
+                      "Son Bir Haftalık Kuruma Göre İstek Sayısı İstatistiği",
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),
@@ -122,7 +122,7 @@ class _PanelPageState extends State<PanelPage> {
                             xValueMapper: (ChartData data, _) => data.x,
                             yValueMapper: (ChartData data, _) => data.y,
                             name: 'Gold',
-                            color: Color.fromRGBO(133, 182, 221, 1)),
+                            color: Color.fromRGBO(115, 128, 138, 1)),
                         // BarSeries<_ChartData, String>(
                         //     dataSource: data,
                         //     xValueMapper: (_ChartData data, _) => data.x,
