@@ -60,9 +60,9 @@ StatefulBuilder Custom_UserAlertDialog(
               SizedBox(width: 24),
               Expanded(
                 flex: 3,
-                child: CustomTimeDropdownWidget(
-                  dropdownList: ['dakika', 'saat', 'gün', 'hafta', 'ay'],
-                ),
+                child: CustomAdd_Dropdown(
+                    // dropdownList: ['dakika', 'saat', 'gün', 'hafta', 'ay'],
+                    ),
               ),
             ],
           ),

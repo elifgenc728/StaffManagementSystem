@@ -176,34 +176,37 @@ class _JobPoolState extends State<JobPool> {
                                   ),
                                   Expanded(
                                     flex: 3,
-                                    child: Column(
-                                      children: [
-                                        ElevatedButton.icon(
-                                          onPressed: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        DetailPage()));
-                                          },
-                                          label: Text(
-                                            'Detay',
-                                            style: TextStyle(
-                                              fontSize: 13,
+                                    child: Align(
+                                      alignment: Alignment.bottomRight,
+                                      child: Column(
+                                        children: [
+                                          ElevatedButton.icon(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          DetailPage()));
+                                            },
+                                            label: Text(
+                                              'Detay',
+                                              style: TextStyle(
+                                                fontSize: 13,
+                                              ),
+                                              maxLines: 2,
                                             ),
-                                            maxLines: 2,
+                                            icon: Icon(Icons.arrow_right),
                                           ),
-                                          icon: Icon(Icons.arrow_right),
-                                        ),
-                                        CustomTextButton(),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 10,
-                                              top: 5,
-                                              right: 10,
-                                              bottom: 20),
-                                        ),
-                                      ],
+                                          CustomTextButton(),
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                left: 10,
+                                                top: 5,
+                                                right: 10,
+                                                bottom: 20),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ],

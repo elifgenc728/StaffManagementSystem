@@ -20,7 +20,8 @@ class _CustomTextButtonState extends State<CustomTextButton> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Icon(
-            Icons.supervised_user_circle_rounded,
+            // Icons.supervised_user_circle_rounded,
+            Icons.person, size: 18,
             color: Colors.blue[900],
           ),
           Text('Kullanıcı Ata',
@@ -29,23 +30,21 @@ class _CustomTextButtonState extends State<CustomTextButton> {
                   color: Colors.blue[900])),
         ],
       ),
-      
-        onPressed: () {
-            showDialog(
-              barrierDismissible: false,
-              context: context,
-              builder: (context) {
-                return StatefulBuilder(
-                  builder: (context, setState) {
-                    return SingleChildScrollView(
-                      child: Custom_UserAlertDialog(context, setState),
-                    );
-                  },
+      onPressed: () {
+        showDialog(
+          barrierDismissible: false,
+          context: context,
+          builder: (context) {
+            return StatefulBuilder(
+              builder: (context, setState) {
+                return SingleChildScrollView(
+                  child: Custom_UserAlertDialog(context, setState),
                 );
               },
             );
           },
-      
+        );
+      },
     );
   }
 }

@@ -46,74 +46,38 @@ class _DetailPageState extends State<DetailPage> {
                 "Açılma Tarihi: 27.02.2023",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              children: <Widget>[
+              children: [
                 Divider(
                   thickness: 1.0,
                   height: 1.0,
                 ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Durum: Henüz Çözülmedi.',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText2
-                            ?.copyWith(fontSize: 16),
-                      ),
-                      Text(
-                        'Toplam İşlem Günü: 7 Gün / 2 Saat',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText2
-                            ?.copyWith(fontSize: 16),
-                      )
-                    ],
+                Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Durum: Henüz Çözülmedi.',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText2
+                              ?.copyWith(fontSize: 16),
+                        ),
+                        Text(
+                          'Toplam İşlem Günü: 7 Gün / 2 Saat',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText2
+                              ?.copyWith(fontSize: 16),
+                        ),
+                        Text("Önem Seviyesi: Normal"),
+                        Text("İstek Türü: Yeni İstek")
+                      ],
+                    ),
                   ),
-                ),
-                ButtonBar(
-                  alignment: MainAxisAlignment.spaceAround,
-                  buttonHeight: 52.0,
-                  buttonMinWidth: 90.0,
-                  children: <Widget>[
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4.0)),
-                      ),
-                      onPressed: () {
-                        cardA.currentState?.expand();
-                      },
-                      child: Column(
-                        children: <Widget>[
-                          Icon(Icons.print_rounded),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 2.0),
-                          ),
-                          // Text('Open'),
-                        ],
-                      ),
-                    ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4.0)),
-                      ),
-                      onPressed: () {},
-                      child: Column(
-                        children: <Widget>[
-                          Icon(Icons.recycling),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 2.0),
-                          ),
-                          // Text('Toggle'),
-                        ],
-                      ),
-                    ),
-                  ],
                 ),
               ],
             ),
@@ -240,13 +204,15 @@ class CustomBorderTextField extends StatelessWidget {
     this.prefixIcon,
     this.height,
     this.hintText,
+    this.width,
+   
   });
 
   final String? labelText;
   final IconData? prefixIcon;
   final int? height;
   final String? hintText;
-
+  final int? width;
   @override
   Widget build(BuildContext context) {
     return TextField(

@@ -15,7 +15,6 @@ class NewJobPage extends StatefulWidget {
 }
 
 class _NewJobPageState extends State<NewJobPage> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +54,8 @@ class _NewJobPageState extends State<NewJobPage> {
                                   maxLines: 1,
                                 ),
                                 subtitle: Text(
-                                  "Mia Teknoloji HBYS",style: TextStyle(fontFamily: ' Trajan Pro'),
+                                  "Mia Teknoloji HBYS",
+                                  style: TextStyle(fontFamily: ' Trajan Pro'),
                                   maxLines: 2,
                                 ),
                               ),
@@ -144,7 +144,7 @@ class _NewJobPageState extends State<NewJobPage> {
                 height: 18,
               ),
               Custom_ChipWidget(),
-             
+
               SizedBox(
                 height: 0,
               ),
