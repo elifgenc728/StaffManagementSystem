@@ -32,7 +32,6 @@ StatefulBuilder Custom_MessageAlertDialog(
           CustomBorderTextField(
             prefixIcon: Icons.subject_outlined,
             labelText: "Konu",
-           
           ),
           SizedBox(
             height: 12,
@@ -47,7 +46,6 @@ StatefulBuilder Custom_MessageAlertDialog(
             height: 2,
             labelText: "Email",
             hintText: "example@miateknoloji.com",
-            
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -124,3 +122,68 @@ StatefulBuilder Custom_MessageAlertDialog(
     );
   });
 }
+
+
+// class TimeDropdownCustom extends StatefulWidget {
+//   const TimeDropdownCustom({super.key});
+
+//   @override
+//   State<TimeDropdownCustom> createState() => _TimeDropdownCustomState();
+// }
+
+// class _TimeDropdownCustomState extends State<TimeDropdownCustom> {
+//   bool like;
+//   List<Modal> userList = List<Modal>();
+
+//   @override
+//   void initState() {
+//     userList.add(Modal(name: 'Dipto', isSelected: false));
+//     userList.add(Modal(name: 'Dipankar', isSelected: false));
+//     userList.add(Modal(name: 'Sajib', isSelected: false));
+//     userList.add(Modal(name: 'Shanto', isSelected: false));
+//     userList.add(Modal(name: 'Pranto', isSelected: false));
+//     super.initState();
+//   }
+//   @override
+//   Widget build(BuildContext context) {
+//     return  Container(
+//             child: ListView.builder(
+//               itemCount: userList.length,
+//               itemBuilder: (context, index) {
+//                 return Container(
+//                   padding: EdgeInsets.all(10),
+//                   height: 50,
+//                   width: MediaQuery
+//                       .of(context)
+//                       .size
+//                       .width * 0.8,
+//                   color: Colors.yellowAccent,
+//                   child: Row(
+//                     crossAxisAlignment: CrossAxisAlignment.center,
+//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                     children: [
+//                       Text(
+//                         userList[index].name,
+//                       ),
+//                       Positioned(
+//                         child: IconButton(
+//                           icon: _iconControl( userList[index].isSelected),
+//                           onPressed: () {
+//                             setState(() {
+//                               userList.forEach((element) {
+//                                 element.isSelected = false;
+//                               });
+
+//                               userList[index].isSelected = true;
+//                             });
+//                           },
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 );
+//               },
+//             ),
+//           );
+//   }
+// }

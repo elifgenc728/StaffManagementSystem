@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mia_support_system/presentation/home/views/detail_page.dart';
+import 'package:mia_support_system/presentation/widget/custom_chipwidget.dart';
 import 'package:mia_support_system/presentation/widget/customadd_dropdown.dart';
 import 'package:interval_time_picker/interval_time_picker.dart';
 import 'custom_dropdown.dart';
@@ -51,45 +52,19 @@ StatefulBuilder Custom_UserAlertDialog(
                 flex: 3,
                 child: SizedBox(
                   width: 1,
-                  height: 25,
+                  height: 30,
                   child: CustomBorderTextField(
                     prefixIcon: Icons.alarm,
                   ),
                 ),
               ),
-              SizedBox(width: 24),
+              SizedBox(width: 10),
               Expanded(
-                flex: 3,
-                child: CustomAdd_Dropdown(
-                    // dropdownList: ['dakika', 'saat', 'gün', 'hafta', 'ay'],
-                    ),
+                flex: 10,
+                child: CustomPriorityChips(),
               ),
             ],
           ),
-          // Row(
-          //   children: <Widget>[
-          //     Expanded(
-          //       flex: 3,
-          //       child: Container(width: 2, child: CustomBorderTextField()),
-          //     ),
-          //     Expanded(
-          //       flex: 2,
-          //       child: Container(width: 2, child: custom_time( value: timeChoose,
-          //         onChanged: (String? value) {
-          //           setState(() {
-          //             timeChoose = value!;
-          //           });
-          //         },
-          //         items: list1.map<DropdownMenuItem<String>>((String value) {
-          //           return DropdownMenuItem<String>(
-          //             value: value,
-          //             child: Text(value),
-          //           );
-          //         }).toList(),)),
-          //     )
-          //   ],
-          // ),
-
           ElevatedButton(
             onPressed: () {},
             child: Text('Kullanıcıya Ata'),

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:mia_support_system/presentation/home/views/job_pool.dart';
@@ -40,12 +42,71 @@ class _DetailPageState extends State<DetailPage> {
               key: cardA,
               // leading:
               //     CircleAvatar(child: Image.asset("assets/images/devs.jpg")),
-              title:
-                  Text('Kurum: Çanakkale Onsekiz Mart Üniversitesi Hastanesi'),
-              subtitle: Text(
-                "Açılma Tarihi: 27.02.2023",
-                style: TextStyle(fontWeight: FontWeight.bold),
+              title: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    RichText(
+                      text: TextSpan(children: <TextSpan>[
+                        TextSpan(
+                          text: 'Kurum: ',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.black),
+                        ),
+                        TextSpan(
+                            text:
+                                "Çanakkale Onsekiz Mart Üniversitesi Hastanesi",
+                            style: TextStyle(color: Colors.black)),
+                      ]),
+                    ),
+                    SizedBox(height: 2),
+                    RichText(
+                      text: TextSpan(children: <TextSpan>[
+                        TextSpan(
+                          text: 'Kullanıcı: ',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.black),
+                        ),
+                        TextSpan(
+                            text: "Ali ÖZTEN",
+                            style: TextStyle(color: Colors.black)),
+                      ]),
+                    ),
+                    SizedBox(height: 2),
+                    RichText(
+                      text: TextSpan(children: <TextSpan>[
+                        TextSpan(
+                          text: 'Konu: ',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.black),
+                        ),
+                        TextSpan(
+                            text: "Etkin Maddenin İlave Değeri hk.",
+                            style: TextStyle(color: Colors.black)),
+                      ]),
+                    ),
+                    SizedBox(height: 2),
+                    RichText(
+                      text: TextSpan(children: <TextSpan>[
+                        TextSpan(
+                          text: 'Açılma Tarihi: ',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.black),
+                        ),
+                        TextSpan(
+                            text: "22/02/2023 - 17.50",
+                            style: TextStyle(color: Colors.black)),
+                      ]),
+                    ),
+                  ],
+                ),
               ),
+              // subtitle: Text(
+              //   "Açılma Tarihi: 27.02.2023",
+              //   style: TextStyle(fontWeight: FontWeight.bold),
+              // ),
+
               children: [
                 Divider(
                   thickness: 1.0,
@@ -55,27 +116,56 @@ class _DetailPageState extends State<DetailPage> {
                   padding: EdgeInsets.all(20),
                   child: Align(
                     alignment: Alignment.centerLeft,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Durum: Henüz Çözülmedi.',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText2
-                              ?.copyWith(fontSize: 16),
-                        ),
-                        Text(
-                          'Toplam İşlem Günü: 7 Gün / 2 Saat',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText2
-                              ?.copyWith(fontSize: 16),
-                        ),
-                        Text("Önem Seviyesi: Normal"),
-                        Text("İstek Türü: Yeni İstek")
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          RichText(
+                            text: TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                text: 'Durum: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              TextSpan(
+                                  text: "Henüz Çözülmedi",
+                                  style: TextStyle(color: Colors.black)),
+                            ]),
+                          ),
+                          SizedBox(height: 2),
+                          SizedBox(height: 2),
+                          RichText(
+                            text: TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                text: 'Önem Seviyesi: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              TextSpan(
+                                  text: "Normal",
+                                  style: TextStyle(color: Colors.black)),
+                            ]),
+                          ),
+                          SizedBox(height: 2),
+                          RichText(
+                            text: TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                text: 'İstek Türü:',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              TextSpan(
+                                  text: "Yeni İstek",
+                                  style: TextStyle(color: Colors.black)),
+                            ]),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -107,22 +197,56 @@ class _DetailPageState extends State<DetailPage> {
                     title: Text("Elif Genç"),
                     subtitle: Text("22.12.2023"),
                   ),
-                  ListTile(
-                    leading: Text("Konu:gfdgdgdf "),
-                  ),
                   Divider(
                     thickness: 1.5,
                     indent: 30,
                     endIndent: 100,
                   ),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 15,
-                    ),
-                    child: Text(
-                        "Mesaj: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when ."),
-                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: Column(children: [
+                      RichText(
+                        text: TextSpan(children: <TextSpan>[
+                          TextSpan(
+                            text: 'Mesaj: ',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                          TextSpan(
+                              text:
+                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when .",
+                              style: TextStyle(color: Colors.black)),
+                        ]),
+                      ),
+                      Divider(
+                        thickness: 1.5,
+                        indent: 30,
+                        endIndent: 20,
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: InkWell(
+                          onTap: () {},
+                          child: RichText(
+                            text: TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                text: 'Ek: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              TextSpan(
+                                  text: "deger_ekleme.png",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline)),
+                            ]),
+                          ),
+                        ),
+                      ),
+                    ]),
+                  )
                 ],
               ),
             ),
@@ -149,22 +273,57 @@ class _DetailPageState extends State<DetailPage> {
                     title: Text("Sena Çelik"),
                     subtitle: Text("22.12.2023"),
                   ),
-                  ListTile(
-                    leading: Text("Konu:gfdgdgdf "),
-                  ),
                   Divider(
                     thickness: 1.5,
                     indent: 30,
                     endIndent: 100,
                   ),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 15,
-                    ),
-                    child: Text(
-                        "Mesaj: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's  ."),
-                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: Column(children: [
+                      RichText(
+                        text: TextSpan(children: <TextSpan>[
+                          TextSpan(
+                            text: 'Mesaj: ',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                          TextSpan(
+                              text:
+                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when .",
+                              style: TextStyle(color: Colors.black)),
+                        ]),
+                      ),
+                      Divider(
+                        thickness: 1.5,
+                        indent: 30,
+                        endIndent: 20,
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: InkWell(
+                          onTap: () {},
+                          child: RichText(
+                            text: TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                text: 'Ek: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              TextSpan(
+                                text: "deger_ekleme.png",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline),
+                              ),
+                            ]),
+                          ),
+                        ),
+                      ),
+                    ]),
+                  )
                 ],
               ),
             )
@@ -205,7 +364,6 @@ class CustomBorderTextField extends StatelessWidget {
     this.height,
     this.hintText,
     this.width,
-   
   });
 
   final String? labelText;
@@ -232,6 +390,7 @@ class CustomBorderTextField extends StatelessWidget {
         prefixIcon: Icon(
           prefixIcon,
           color: Colors.grey,
+          size: 20,
         ),
         labelText: labelText,
         hintText: hintText,

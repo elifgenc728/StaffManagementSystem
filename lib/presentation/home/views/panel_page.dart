@@ -79,62 +79,67 @@ class _PanelPageState extends State<PanelPage> {
             icon: Icon(Icons.menu)),
         title: Text('HBYS Destek Sistemi'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text(
-              "Tüm Gelen İstek İstatistikleri",
-              style: Theme.of(context).textTheme.titleMedium,
-              textAlign: TextAlign.start,
-            ),
-          ),
-          Expanded(child: CustomPageViewWidget()),
-          SizedBox(
-            height: 20,
-          ),
-          Expanded(
-            flex: 6,
-            child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      "Son Bir Haftalık Kuruma Göre İstek Sayısı İstatistiği",
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  SfCartesianChart(
-                      enableMultiSelection: true,
-                      primaryXAxis: CategoryAxis(),
-                      primaryYAxis:
-                          NumericAxis(minimum: 0, maximum: 60, interval: 5),
-                      tooltipBehavior: _tooltip,
-                      series: <ChartSeries<ChartData, String>>[
-                        BarSeries<ChartData, String>(
-                            dataSource: data,
-                            xValueMapper: (ChartData data, _) => data.x,
-                            yValueMapper: (ChartData data, _) => data.y,
-                            name: 'Gold',
-                            color: Color.fromRGBO(115, 128, 138, 1)),
-                        // BarSeries<_ChartData, String>(
-                        //     dataSource: data,
-                        //     xValueMapper: (_ChartData data, _) => data.x,
-                        //     yValueMapper: (_ChartData data, _) => data.y,
-                        //     name: 'Gold',
-                        //     color: Colors.red)
-                      ]),
-                ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Text(
+                "Tüm Gelen İstek İstatistikleri",
+                style: TextStyle(fontSize: 16.5, fontWeight: FontWeight.w700),
+                textAlign: TextAlign.start,
               ),
             ),
-          ),
-        ],
+            CustomPageViewWidget(),
+            SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              flex: 6,
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Text(
+                        "Son Bir Haftalık Kuruma Göre İstek Sayısı İstatistiği",
+                        style: TextStyle(
+                            fontSize: 16.5, fontWeight: FontWeight.w700),
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    SfCartesianChart(
+                        enableMultiSelection: true,
+                        primaryXAxis: CategoryAxis(),
+                        primaryYAxis:
+                            NumericAxis(minimum: 0, maximum: 60, interval: 5),
+                        tooltipBehavior: _tooltip,
+                        series: <ChartSeries<ChartData, String>>[
+                          BarSeries<ChartData, String>(
+                              dataSource: data,
+                              xValueMapper: (ChartData data, _) => data.x,
+                              yValueMapper: (ChartData data, _) => data.y,
+                              name: 'Gold',
+                              color: Color.fromRGBO(115, 128, 138, 1)),
+                          // BarSeries<_ChartData, String>(
+                          //     dataSource: data,
+                          //     xValueMapper: (_ChartData data, _) => data.x,
+                          //     yValueMapper: (_ChartData data, _) => data.y,
+                          //     name: 'Gold',
+                          //     color: Colors.red)
+                        ]),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

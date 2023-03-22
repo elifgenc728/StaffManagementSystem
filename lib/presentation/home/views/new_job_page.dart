@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mia_support_system/presentation/home/views/detail_page.dart';
 import 'package:mia_support_system/presentation/widget/custom_dropdown.dart';
 
+
 import '../../widget/custom_chipwidget.dart';
 import '../../widget/custom_radiobutton.dart';
 import '../../widget/customadd_dropdown.dart';
 import '../../widget/customradiobutton.dart';
+import '../../widget/custom_cool_alert.dart';
 
 class NewJobPage extends StatefulWidget {
   const NewJobPage({super.key});
@@ -120,7 +122,7 @@ class _NewJobPageState extends State<NewJobPage> {
                 ],
               ),
               SizedBox(
-                height: 18,
+                height: 10,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,20 +142,17 @@ class _NewJobPageState extends State<NewJobPage> {
                       )),
                 ],
               ),
-              SizedBox(
-                height: 18,
-              ),
-              Custom_ChipWidget(),
+              CustomPriorityChips(),
 
-              SizedBox(
-                height: 0,
-              ),
-              // FittedBox(child: CustomRadioButton()),
+              CustomRequestChips(),
+              // FittedBox(child: CustomRequestRadioButton()),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue[900],
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    CoolAlertCustom.successCoolAlert(context);
+                  },
                   child: Text('İstek Gönder'))
             ],
           ),

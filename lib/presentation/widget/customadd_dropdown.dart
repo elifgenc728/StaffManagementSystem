@@ -9,7 +9,6 @@ class CustomAdd_Dropdown extends StatefulWidget {
 
 class _CustomAdd_DropdownState extends State<CustomAdd_Dropdown> {
   String? valueChoose;
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -81,6 +80,7 @@ class _CustomTimeDropdownState extends State<CustomTimeDropdown> {
         padding: EdgeInsets.all(16.0),
         child: Container(
           height: 35,
+          width: 20,
           padding: EdgeInsets.only(
             left: 10,
             right: 10,
@@ -89,22 +89,9 @@ class _CustomTimeDropdownState extends State<CustomTimeDropdown> {
               border: Border.all(color: Colors.grey, width: 1),
               borderRadius: BorderRadius.circular(20.0)),
           child: DropdownButton(
-            hint: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Icon(
-                  Icons.person,
-                  size: 20,
-                ),
-                Text(
-                  'Atanacak Kullanıcı',
-                  style: TextStyle(fontSize: 15),
-                ),
-              ],
-            ),
             dropdownColor: Colors.grey,
             icon: Icon(Icons.arrow_drop_down),
-            iconSize: 30,
+            iconSize: 20,
             isExpanded: true,
             underline: SizedBox(),
             style: TextStyle(

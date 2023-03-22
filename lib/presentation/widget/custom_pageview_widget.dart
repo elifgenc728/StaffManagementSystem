@@ -30,7 +30,7 @@ class CustomPageViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 250,
+        height: 130,
         child: ListView.builder(
           itemCount: number.length,
           scrollDirection: Axis.horizontal,
@@ -78,4 +78,3 @@ class CustomPageViewWidget extends StatelessWidget {
         ));
   }
 }
- 

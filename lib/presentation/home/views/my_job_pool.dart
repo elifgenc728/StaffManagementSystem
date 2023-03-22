@@ -1,43 +1,26 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
-import '../../widget/custom_drawer.dart';
-import '../../widget/custom_dropdown.dart';
 import '../../widget/custom_textbutton.dart';
-import 'detail_page.dart';
 
-class JobPool extends StatefulWidget {
-  const JobPool({Key? key}) : super(key: key);
+class MyJobPool extends StatefulWidget {
+  const MyJobPool({super.key});
 
   @override
-  State<JobPool> createState() => _JobPoolState();
+  State<MyJobPool> createState() => _MyJobPoolState();
 }
 
-class _JobPoolState extends State<JobPool> {
-  late final List<CollectionModel> _items;
+class _MyJobPoolState extends State<MyJobPool> {
+  late final List<MyJobs> items;
 
   @override
   void initState() {
     super.initState();
-    _items = [
-      CollectionModel(
+    items = [
+      MyJobs(
           atananKisi: ' Elif GENÇ',
           gonderenKisi: 'Mehmet YILMAZ',
           tarih: '26.04.2023',
           saat: '11:04',
-          durum: 'devam ediyor'),
-      CollectionModel(
-          atananKisi: ' Sema ŞAHİN',
-          gonderenKisi: 'Mehmet YILMAZ',
-          tarih: '26.04.2023',
-          saat: '12:15',
-          durum: 'devam ediyor'),
-      CollectionModel(
-          atananKisi: ' Ali ÖZTEN',
-          gonderenKisi: 'Mehmet YILMAZ',
-          tarih: '26.04.2023',
-          saat: '16:44',
           durum: 'devam ediyor'),
     ];
   }
@@ -54,10 +37,10 @@ class _JobPoolState extends State<JobPool> {
               },
             ),
             automaticallyImplyLeading: false,
-            title: Text('Genel İş Havuzu'),
+            title: Text('Benim İş Havuzum'),
           ),
           body: ListView.builder(
-              itemCount: _items.length,
+              itemCount: items.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(9.0),
@@ -72,7 +55,7 @@ class _JobPoolState extends State<JobPool> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  _items[index].atananKisi,
+                                  items[index].atananKisi,
                                   style: TextStyle(fontSize: 18),
                                 ),
                                 Text(
@@ -108,7 +91,7 @@ class _JobPoolState extends State<JobPool> {
                                 ],
                               ),
                               SizedBox(
-                                height: 4,
+                                height: 1,
                               ),
                               Row(
                                 mainAxisAlignment:
@@ -129,11 +112,11 @@ class _JobPoolState extends State<JobPool> {
                                               width: 8,
                                             ),
                                             Text(
-                                              _items[index].tarih,
+                                              items[index].tarih,
                                             ),
                                             Text(' - '),
                                             Text(
-                                              _items[index].saat,
+                                              items[index].saat,
                                             ),
                                           ],
                                         ),
@@ -151,17 +134,8 @@ class _JobPoolState extends State<JobPool> {
                                               width: 8,
                                             ),
                                             Text(
-                                              _items[index].gonderenKisi,
+                                              items[index].gonderenKisi,
                                               style: TextStyle(fontSize: 15),
-                                            ),
-                                            SizedBox(
-                                              width: 12,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                bottom: 0.0,
-                                              ),
-                                              child: CustomTextButton(),
                                             ),
                                           ],
                                         ),
@@ -184,19 +158,22 @@ class _JobPoolState extends State<JobPool> {
                                       ],
                                     ),
                                   ),
-                                  Align(
-                                    alignment: Alignment.bottomRight,
-                                    child: Column(
-                                      children: [
-                                        CustomDetailTextButton(),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 10,
-                                              top: 5,
-                                              right: 10,
-                                              bottom: 20),
-                                        ),
-                                      ],
+                                  Expanded(
+                                    flex: 3,
+                                    child: Align(
+                                      alignment: Alignment.bottomRight,
+                                      child: Column(
+                                        children: [
+                                          CustomDetailTextButton(),
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                left: 10,
+                                                top: 5,
+                                                right: 10,
+                                                bottom: 20),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -213,19 +190,14 @@ class _JobPoolState extends State<JobPool> {
   }
 }
 
-//durum(ilgileniyor,reddedildi..),
-//yollayan kullanıcı(isimler),
-// atanan
-//bitiş süre
-
-class CollectionModel {
+class MyJobs {
   final String atananKisi;
   final String gonderenKisi;
   final String durum;
   final String saat;
   final String tarih;
 
-  CollectionModel(
+  MyJobs(
       {required this.atananKisi,
       required this.gonderenKisi,
       required this.tarih,
