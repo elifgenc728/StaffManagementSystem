@@ -5,8 +5,7 @@ import 'package:mia_support_system/presentation/widget/customadd_dropdown.dart';
 import 'package:interval_time_picker/interval_time_picker.dart';
 import 'custom_dropdown.dart';
 
-StatefulBuilder Custom_UserAlertDialog(
-    BuildContext context, StateSetter setState) {
+Custom_UserAlertDialog(BuildContext context, StateSetter setState) {
   return StatefulBuilder(builder: (context, setState) {
     return AlertDialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -28,15 +27,6 @@ StatefulBuilder Custom_UserAlertDialog(
             ],
           ),
           CustomAdd_Dropdown(),
-          // Row(
-          //   children: [
-          //     Text(
-          //       'Atanacak Kullanıcı : ',
-          //       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-          //     ),
-          //     CustomDropdown(),
-          //   ],
-          // ),
           CustomBorderTextField(
             height: 100,
             prefixIcon: Icons.message_outlined,
@@ -45,7 +35,6 @@ StatefulBuilder Custom_UserAlertDialog(
           SizedBox(
             height: 4,
           ),
-
           Row(
             children: [
               Expanded(

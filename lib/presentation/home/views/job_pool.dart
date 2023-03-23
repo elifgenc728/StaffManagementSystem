@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../widget/custom_drawer.dart';
 import '../../widget/custom_dropdown.dart';
+import '../../widget/custom_popupmenu.dart';
 import '../../widget/custom_textbutton.dart';
 import 'detail_page.dart';
 
@@ -96,7 +97,7 @@ class _JobPoolState extends State<JobPool> {
                                     width: 8,
                                   ),
                                   Expanded(
-                                    flex: 1,
+                                    flex: 6,
                                     child: Text(
                                       "Refakatçi Makbuz Sorgulama Hakkında Bilgileri güncelleme",
                                       maxLines: 2,
@@ -105,6 +106,8 @@ class _JobPoolState extends State<JobPool> {
                                       ),
                                     ),
                                   ),
+                                  Expanded(
+                                      flex: 1, child: CustomPopupMenuWidget()),
                                 ],
                               ),
                               SizedBox(
@@ -156,13 +159,7 @@ class _JobPoolState extends State<JobPool> {
                                             ),
                                             SizedBox(
                                               width: 12,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                bottom: 0.0,
-                                              ),
-                                              child: CustomTextButton(),
-                                            ),
+                                            ),  
                                           ],
                                         ),
                                         SizedBox(
