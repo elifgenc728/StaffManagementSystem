@@ -25,20 +25,20 @@ class _JobPoolState extends State<JobPool> {
       CollectionModel(
           atananKisi: ' Elif GENÇ',
           gonderenKisi: 'Mehmet YILMAZ',
-          tarih: '26.04.2023',
-          saat: '11:04',
+          tarih: '26/04/2023',
+          saat: '11.04',
           durum: 'devam ediyor'),
       CollectionModel(
           atananKisi: ' Sema ŞAHİN',
           gonderenKisi: 'Mehmet YILMAZ',
-          tarih: '26.04.2023',
-          saat: '12:15',
+          tarih: '26/04/2023',
+          saat: '12.15',
           durum: 'devam ediyor'),
       CollectionModel(
           atananKisi: ' Ali ÖZTEN',
           gonderenKisi: 'Mehmet YILMAZ',
-          tarih: '26.04.2023',
-          saat: '16:44',
+          tarih: '26/04/2023',
+          saat: '16.44',
           durum: 'devam ediyor'),
     ];
   }
@@ -176,26 +176,28 @@ class _JobPoolState extends State<JobPool> {
                                               width: 8,
                                             ),
                                             Text('211088'),
+                                            SizedBox(width: 245,),
+                                            CustomDetailTextButton(),
                                           ],
                                         ),
                                       ],
                                     ),
                                   ),
-                                  Align(
-                                    alignment: Alignment.bottomRight,
-                                    child: Column(
-                                      children: [
-                                        CustomDetailTextButton(),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 10,
-                                              top: 5,
-                                              right: 10,
-                                              bottom: 20),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  // Align(
+                                  //   alignment: Alignment.bottomRight,
+                                  //   child: Column(
+                                  //     children: [
+                                  //       CustomDetailTextButton(),
+                                  //       Padding(
+                                  //         padding: EdgeInsets.only(
+                                             
+                                  //             top: 0,
+                                              
+                                  //             bottom: 0),
+                                  //       ),
+                                  //     ],
+                                  //   ),
+                                  // ),
                                 ],
                               ),
                             ],

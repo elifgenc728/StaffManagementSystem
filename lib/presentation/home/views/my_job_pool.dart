@@ -153,29 +153,31 @@ class _MyJobPoolState extends State<MyJobPool> {
                                               width: 8,
                                             ),
                                             Text('211088'),
+                                            SizedBox(width: 245,),
+                                            CustomDetailTextButton(),
                                           ],
                                         ),
                                       ],
                                     ),
                                   ),
-                                  Expanded(
-                                    flex: 3,
-                                    child: Align(
-                                      alignment: Alignment.bottomRight,
-                                      child: Column(
-                                        children: [
-                                          CustomDetailTextButton(),
-                                          Padding(
-                                            padding: EdgeInsets.only(
-                                                left: 10,
-                                                top: 5,
-                                                right: 10,
-                                                bottom: 20),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
+                                  // Expanded(
+                                  //   flex: 3,
+                                  //   child: Align(
+                                  //     alignment: Alignment.bottomRight,
+                                  //     child: Column(
+                                  //       children: [
+                                  //         CustomDetailTextButton(),
+                                  //         Padding(
+                                  //           padding: EdgeInsets.only(
+                                  //               left: 10,
+                                  //               top: 5,
+                                  //               right: 10,
+                                  //               bottom: 20),
+                                  //         ),
+                                  //       ],
+                                  //     ),
+                                  //   ),
+                                  // ),
                                 ],
                               ),
                             ],

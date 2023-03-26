@@ -29,7 +29,7 @@ class _CustomTextButtonState extends State<CustomTextButton> {
       ),
       onPressed: () {
         showDialog(
-          barrierDismissible: false,
+          barrierDismissible: true,
           context: context,
           builder: (context) {
             return StatefulBuilder(

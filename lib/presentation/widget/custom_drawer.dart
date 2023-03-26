@@ -19,16 +19,23 @@ class NavBar extends StatelessWidget {
         ),
         child: ListView(
           children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(24),
+            Container(
+              height: 120,
+              child: DrawerHeader(   
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(24),
+                  ),
+                  color: Colors.blue[900],
+                  
                 ),
-                color: Colors.blue[900],
-              ),
-              child: Text(
-                'Yönetici Menüsü',
-                style: TextStyle(color: Colors.white, fontSize: 24),
+                child: Center(
+                  child: Text(
+                    'Yönetici Menüsü',
+                    
+                    style: TextStyle(color: Colors.white, fontSize: 24,),
+                  ),
+                ),
               ),
             ),
             GestureDetector(

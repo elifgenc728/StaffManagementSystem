@@ -195,7 +195,7 @@ class _DetailPageState extends State<DetailPage> {
                           color: Colors.black54,
                         )),
                     title: Text("Elif Genç"),
-                    subtitle: Text("22.12.2023"),
+                    subtitle: Text("22/12/2023"),
                   ),
                   Divider(
                     thickness: 1.5,
@@ -264,6 +264,7 @@ class _DetailPageState extends State<DetailPage> {
               child: Column(
                 children: [
                   ListTile(
+                   
                     leading: CircleAvatar(
                         backgroundColor: Colors.blue[50],
                         child: Icon(
@@ -271,7 +272,7 @@ class _DetailPageState extends State<DetailPage> {
                           color: Colors.black54,
                         )),
                     title: Text("Sena Çelik"),
-                    subtitle: Text("22.12.2023"),
+                    subtitle: Text("22/12/2023"),
                   ),
                   Divider(
                     thickness: 1.5,
@@ -399,3 +400,4 @@ class CustomBorderTextField extends StatelessWidget {
     );
   }
 }
+

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:chips_choice_null_safety/chips_choice_null_safety.dart';
 import 'package:async/async.dart';
 
+import '../home/views/detail_page.dart';
+
 class CustomPriorityChips extends StatefulWidget {
   @override
   _CustomPriorityChipsState createState() => _CustomPriorityChipsState();
@@ -131,28 +133,44 @@ class _CustomTimeChipsState extends State<CustomTimeChips> {
   List<String> list1 = ['saat', 'dakika', 'gün', 'hafta', 'ay'];
   @override
   Widget build(BuildContext context) {
-    return Card(
-        child: Column(
-      children: <Widget>[
-        Text('Yapılma Süresi'),
-        Divider(
-          thickness: 2,
-        ),
-        Wrap(
-          alignment: WrapAlignment.spaceAround,
-          spacing: 22.0,
-          children: List<Widget>.generate(5, (int index) {
-            return FilterChip(
-                label: Text(list1[index]),
-                selected: val == index,
-                onSelected: (bool selected) {
-                  setState(() {
-                    val = selected ? index : 0;
-                  });
-                });
-          }).toList(),
-        )
-      ],
-    ));
+    return Container(
+      height: 200,
+      child: Card(
+          elevation: 10,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 0.0),
+                child: Text('Görevin Yapılma Süresi'),
+              ),
+              Divider(
+                thickness: 2,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 100.0, right: 100.0),
+                child: CustomBorderTextField(
+                
+                  height: 12,
+                  prefixIcon: Icons.alarm,
+                ),
+              ),
+              Wrap(
+                alignment: WrapAlignment.spaceAround,
+                spacing: 11.50,
+                children: List<Widget>.generate(5, (int index) {
+                  return RawChip(
+                      label: Text(list1[index]),
+                      selected: val == index,
+                      onSelected: (bool selected) {
+                        setState(() {
+                          val = selected ? index : 0;
+                        });
+                      });
+                }).toList(),
+              )
+            ],
+          )),
+    );
   }
 }
