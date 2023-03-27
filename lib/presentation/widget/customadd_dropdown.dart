@@ -12,27 +12,30 @@ class _CustomAdd_DropdownState extends State<CustomAdd_Dropdown> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width:400,
+      width: 400,
       height: 35,
-      
       decoration: BoxDecoration(
           border: Border.all(color: Colors.grey, width: 1),
           borderRadius: BorderRadius.circular(20.0)),
       child: DropdownButton(
-        hint: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Icon(
-              Icons.person,
-              size: 18,
-            ),
-            Text(
-              'Atanacak Kullanıcı',
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
+        hint: Padding(
+          padding: const EdgeInsets.all(9.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.person,
+                size: 18,
+              ),
+              SizedBox(width: 20),
+              Text(
+                'Atanacak Kullanıcı',
+                style: TextStyle(fontSize: 15),
+              ),
+            ],
+          ),
         ),
-        dropdownColor: Colors.grey,
+        dropdownColor: Colors.grey[200],
         icon: Icon(Icons.arrow_drop_down),
         iconSize: 30,
         isExpanded: true,
@@ -50,7 +53,10 @@ class _CustomAdd_DropdownState extends State<CustomAdd_Dropdown> {
         items: list.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
-            child: Text(value),
+            child: Text(
+              value,
+              style: TextStyle(fontSize: 15),
+            ),
           );
         }).toList(),
       ),
@@ -82,7 +88,7 @@ class _CustomTimeDropdownState extends State<CustomTimeDropdown> {
           ),
           decoration: BoxDecoration(
               border: Border.all(color: Colors.grey, width: 1),
-              borderRadius: BorderRadius.circular(20.0)),
+              borderRadius: BorderRadius.circular(10.0)),
           child: DropdownButton(
             dropdownColor: Colors.grey,
             icon: Icon(Icons.arrow_drop_down),

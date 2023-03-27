@@ -30,8 +30,9 @@ class CustomPageViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 130,
+        height: 100,
         child: ListView.builder(
+          shrinkWrap: true,
           itemCount: number.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
@@ -40,39 +41,61 @@ class CustomPageViewWidget extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(12),
-                          bottomLeft: Radius.circular(12))),
-                  padding: EdgeInsets.all(12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Icon(
-                        icons[index],
-                        color: Colors.blue[900],
-                        size: 32,
+              child: Stack(
+                alignment: AlignmentDirectional.bottomCenter,
+                children: [
+                  Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(12),
+                              bottomLeft: Radius.circular(12))),
+                      child: Positioned(
+                        top: 0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(bottom: 20),
+                              child: Icon(
+                                icons[index],
+                                color: Colors.blue[900],
+                                size: 45,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  number[index].toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 22,
+                                      color: Colors.blue[800]),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      )),
+                  SizedBox(height: 16),
+                  Container(
+                      decoration: BoxDecoration(
+                          color: Colors.blue[900],
+                          borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(12),
+                              bottomLeft: Radius.circular(12))),
+                      child: Text(
+                        caption[index],
+                        style: TextStyle(color: Colors.white),
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            number[index].toString(),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
-                          ),
-                          Text(caption[index])
-                        ],
-                      )
-                    ],
-                  )),
+                      padding: EdgeInsets.all(12)),
+                ],
+              ),
             );
           },
         ));

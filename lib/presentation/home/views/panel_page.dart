@@ -13,14 +13,8 @@ class PanelPage extends StatefulWidget {
 
 class _PanelPageState extends State<PanelPage> {
   GlobalKey<ScaffoldState> _scaffoldState = GlobalKey<ScaffoldState>();
-
-  // final List<ChartData> chartData = [
-
-  // ];
   late TooltipBehavior? _tooltipBehavior;
   late List<ChartData> data;
-  // late List<_ChartData> data1;
-
   late TooltipBehavior _tooltip;
   @override
   void initState() {
@@ -35,18 +29,6 @@ class _PanelPageState extends State<PanelPage> {
       ChartData('Uludağ Üniversitesi', 10),
       ChartData('19 Mayıs Üniversitesi', 10),
     ];
-    // data = [
-    //   _ChartData('Osman Çebin', 12),
-    //   _ChartData('Mahmut Polat', 20),
-    //   _ChartData('Nur Çelik', 15),
-    //   _ChartData('Rabia Çimen', 25),
-    // ];
-    // data1 = [
-    //   _ChartData('Osman Çebin', 85),
-    //   _ChartData('Mahmut Polat', 45),
-    //   _ChartData('Nur Çelik', 35),
-    //   _ChartData('Rabia Çimen', 10),
-    // ];
 
     _tooltip = TooltipBehavior(enable: true);
     super.initState();
@@ -92,12 +74,12 @@ class _PanelPageState extends State<PanelPage> {
                 textAlign: TextAlign.start,
               ),
             ),
-            CustomPageViewWidget(),
+            Expanded(child: CustomPageViewWidget()),
             SizedBox(
               height: 20,
             ),
             Expanded(
-              flex: 6,
+              flex: 3,
               child: Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,14 +107,8 @@ class _PanelPageState extends State<PanelPage> {
                               dataSource: data,
                               xValueMapper: (ChartData data, _) => data.x,
                               yValueMapper: (ChartData data, _) => data.y,
-                              name: 'Gold',
+                              name: 'İstek Sayısı',
                               color: Color.fromRGBO(115, 128, 138, 1)),
-                          // BarSeries<_ChartData, String>(
-                          //     dataSource: data,
-                          //     xValueMapper: (_ChartData data, _) => data.x,
-                          //     yValueMapper: (_ChartData data, _) => data.y,
-                          //     name: 'Gold',
-                          //     color: Colors.red)
                         ]),
                   ],
                 ),
@@ -144,13 +120,6 @@ class _PanelPageState extends State<PanelPage> {
     );
   }
 }
-
-// class _ChartData {
-//   _ChartData(this.x, this.y);
-
-//   final String x;
-//   final double y;
-// }
 
 class ChartData {
   ChartData(this.x, this.y);

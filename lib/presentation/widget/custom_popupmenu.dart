@@ -23,24 +23,21 @@ class _CustomPopupMenuWidgetState extends State<CustomPopupMenuWidget> {
                 child: Column(
                   children: [
                     InkWell(
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.person_add,
-                          size: 18,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.person_add,
+                            size: 18,
+                          ),
+                          title: Text(
+                            'Kullanıcı Ata',
+                            style: TextStyle(fontSize: 15),
+                          ),
                         ),
-                        title: Text(
-                          'Kullanıcı Ata',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ),
-                      onTap: () => Future(
-                        () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (_) => SingleChildScrollView(
-                                  child: Custom_UserAlertDialog(
-                                      context, setState))),
-                        ),
-                      ),
+                        onTap: () async {
+                          Custom_UserAlertDialog(context, (fn) {});
+                        }),
+                    Divider(
+                      thickness: 1,
                     ),
                     InkWell(
                       onTap: () {

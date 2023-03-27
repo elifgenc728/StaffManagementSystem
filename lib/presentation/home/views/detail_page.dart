@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:mia_support_system/presentation/home/views/job_pool.dart';
@@ -264,7 +262,6 @@ class _DetailPageState extends State<DetailPage> {
               child: Column(
                 children: [
                   ListTile(
-                   
                     leading: CircleAvatar(
                         backgroundColor: Colors.blue[50],
                         child: Icon(
@@ -365,16 +362,25 @@ class CustomBorderTextField extends StatelessWidget {
     this.height,
     this.hintText,
     this.width,
+    this.maxLines,
+    this.onChanged,
+    this.textEditingController,
   });
 
   final String? labelText;
   final IconData? prefixIcon;
-  final int? height;
+  final double? height;
   final String? hintText;
-  final int? width;
+  final double? width;
+  final int? maxLines;
+  final Function(String)? onChanged;
+  final TextEditingController? textEditingController;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: textEditingController,
+      onChanged: onChanged,
+      maxLines: maxLines,
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderSide: BorderSide(width: 1, color: Colors.grey),
@@ -395,9 +401,8 @@ class CustomBorderTextField extends StatelessWidget {
         ),
         labelText: labelText,
         hintText: hintText,
-        contentPadding: EdgeInsets.symmetric(vertical: 20),
+        contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 3),
       ),
     );
   }
 }
-

@@ -11,39 +11,39 @@ StatefulBuilder Custom_MessageAlertDialog(
   return StatefulBuilder(builder: (context, setState) {
     return AlertDialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      icon: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Text(
-            "Yeni Mesaj Gönder",
-            style: Theme.of(context).textTheme.headline6,
-          ),
-          Align(
-              alignment: Alignment.topRight,
-              child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(Icons.close))),
-        ],
+      icon: Align(
+        alignment: Alignment.topRight,
+        child: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.close)),
       ),
+      iconPadding: EdgeInsets.zero,
+      title: Text(
+        "Yeni Mesaj Gönder",
+        style: Theme.of(context).textTheme.headline6,
+      ),
+      titlePadding: EdgeInsets.zero,
       content: Column(
         children: [
+          // CustomBorderTextField(
+          //   prefixIcon: Icons.subject_outlined,
+          //   labelText: "Konu",
+          // ),
+          // SizedBox(
+          //   height: 12,
+          // ),
           CustomBorderTextField(
-            prefixIcon: Icons.subject_outlined,
-            labelText: "Konu",
+            prefixIcon: Icons.message_outlined,
+            labelText: "Mesajınız",
+            maxLines: 2,
           ),
-          SizedBox(
-            height: 12,
-          ),
-          CustomBorderTextField(
-              prefixIcon: Icons.message_outlined, labelText: "Mesajınız"),
           SizedBox(
             height: 12,
           ),
           CustomBorderTextField(
             prefixIcon: Icons.mail_outline_outlined,
-            height: 2,
             labelText: "Email",
             hintText: "example@miateknoloji.com",
           ),
@@ -122,68 +122,3 @@ StatefulBuilder Custom_MessageAlertDialog(
     );
   });
 }
-
-
-// class TimeDropdownCustom extends StatefulWidget {
-//   const TimeDropdownCustom({super.key});
-
-//   @override
-//   State<TimeDropdownCustom> createState() => _TimeDropdownCustomState();
-// }
-
-// class _TimeDropdownCustomState extends State<TimeDropdownCustom> {
-//   bool like;
-//   List<Modal> userList = List<Modal>();
-
-//   @override
-//   void initState() {
-//     userList.add(Modal(name: 'Dipto', isSelected: false));
-//     userList.add(Modal(name: 'Dipankar', isSelected: false));
-//     userList.add(Modal(name: 'Sajib', isSelected: false));
-//     userList.add(Modal(name: 'Shanto', isSelected: false));
-//     userList.add(Modal(name: 'Pranto', isSelected: false));
-//     super.initState();
-//   }
-//   @override
-//   Widget build(BuildContext context) {
-//     return  Container(
-//             child: ListView.builder(
-//               itemCount: userList.length,
-//               itemBuilder: (context, index) {
-//                 return Container(
-//                   padding: EdgeInsets.all(10),
-//                   height: 50,
-//                   width: MediaQuery
-//                       .of(context)
-//                       .size
-//                       .width * 0.8,
-//                   color: Colors.yellowAccent,
-//                   child: Row(
-//                     crossAxisAlignment: CrossAxisAlignment.center,
-//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                     children: [
-//                       Text(
-//                         userList[index].name,
-//                       ),
-//                       Positioned(
-//                         child: IconButton(
-//                           icon: _iconControl( userList[index].isSelected),
-//                           onPressed: () {
-//                             setState(() {
-//                               userList.forEach((element) {
-//                                 element.isSelected = false;
-//                               });
-
-//                               userList[index].isSelected = true;
-//                             });
-//                           },
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                 );
-//               },
-//             ),
-//           );
-//   }
-// }

@@ -141,7 +141,23 @@ class _JobPoolState extends State<JobPool> {
                                           ],
                                         ),
                                         SizedBox(
-                                          height: 8,
+                                          height: 4,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.alarm_rounded,
+                                              size: 16,
+                                              color: Colors.blue[900],
+                                            ),
+                                            SizedBox(
+                                              width: 8,
+                                            ),
+                                            Text("2 saat")
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 4,
                                         ),
                                         Row(
                                           children: [
@@ -159,11 +175,11 @@ class _JobPoolState extends State<JobPool> {
                                             ),
                                             SizedBox(
                                               width: 12,
-                                            ),  
+                                            ),
                                           ],
                                         ),
                                         SizedBox(
-                                          height: 8,
+                                          height: 4,
                                         ),
                                         Row(
                                           children: [
@@ -176,28 +192,15 @@ class _JobPoolState extends State<JobPool> {
                                               width: 8,
                                             ),
                                             Text('211088'),
-                                            SizedBox(width: 245,),
+                                            SizedBox(
+                                              width: 245,
+                                            ),
                                             CustomDetailTextButton(),
                                           ],
                                         ),
                                       ],
                                     ),
                                   ),
-                                  // Align(
-                                  //   alignment: Alignment.bottomRight,
-                                  //   child: Column(
-                                  //     children: [
-                                  //       CustomDetailTextButton(),
-                                  //       Padding(
-                                  //         padding: EdgeInsets.only(
-                                             
-                                  //             top: 0,
-                                              
-                                  //             bottom: 0),
-                                  //       ),
-                                  //     ],
-                                  //   ),
-                                  // ),
                                 ],
                               ),
                             ],
@@ -211,11 +214,6 @@ class _JobPoolState extends State<JobPool> {
     );
   }
 }
-
-//durum(ilgileniyor,reddedildi..),
-//yollayan kullanıcı(isimler),
-// atanan
-//bitiş süre
 
 class CollectionModel {
   final String atananKisi;

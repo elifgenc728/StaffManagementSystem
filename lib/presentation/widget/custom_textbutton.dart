@@ -27,21 +27,7 @@ class _CustomTextButtonState extends State<CustomTextButton> {
         style: TextStyle(
             decoration: TextDecoration.underline, color: Colors.blue[900]),
       ),
-      onPressed: () {
-        showDialog(
-          barrierDismissible: true,
-          context: context,
-          builder: (context) {
-            return StatefulBuilder(
-              builder: (context, setState) {
-                return SingleChildScrollView(
-                  child: Custom_UserAlertDialog(context, setState),
-                );
-              },
-            );
-          },
-        );
-      },
+      onPressed: (){},
     );
   }
 }
