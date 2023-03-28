@@ -2,35 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mia_support_system/presentation/widget/custom_user_alertdialog.dart';
 
 import '../home/views/detail_page.dart';
-import 'custom_bottom_sheet.dart';
-
-class CustomTextButton extends StatefulWidget {
-  const CustomTextButton({super.key});
-
-  @override
-  State<CustomTextButton> createState() => _CustomTextButtonState();
-}
-
-class _CustomTextButtonState extends State<CustomTextButton> {
-  Type? get stateSetter => null;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton.icon(
-      icon: Icon(
-        Icons.person_add,
-        size: 15,
-        color: Colors.blue[900],
-      ),
-      label: Text(
-        'Kullanıcı Ata',
-        style: TextStyle(
-            decoration: TextDecoration.underline, color: Colors.blue[900]),
-      ),
-      onPressed: (){},
-    );
-  }
-}
 
 class CustomDetailTextButton extends StatelessWidget {
   const CustomDetailTextButton({

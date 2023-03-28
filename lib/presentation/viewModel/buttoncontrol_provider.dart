@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 
-class ButtonControlProvider extends  ChangeNotifier  {
-
+class ButtonControlProvider extends ChangeNotifier {
   final _subjectTextEditingController = TextEditingController();
   final _messageTextEditingController = TextEditingController();
   bool _buttonIsActive = false;
 
-
-   void buttonIsActiveControl() {
+  void buttonIsActiveControl() {
     if (_subjectTextEditingController.text.isNotEmpty &&
         _messageTextEditingController.text.isNotEmpty) {
       _buttonIsActive = true;
@@ -17,24 +15,24 @@ class ButtonControlProvider extends  ChangeNotifier  {
     notifyListeners();
   }
 
-//tasarımda ki text içinde ki valueları providera göndermek için
- void setSubjectText(value) {
+//tasarımdaki text içinde ki valueları providera göndermek için
+  void setSubjectText(value) {
     _subjectTextEditingController.text = value;
-   buttonIsActiveControl();
+    buttonIsActiveControl();
   }
 
-void setMessageText(value) {
+  void setMessageText(value) {
     _messageTextEditingController.text = value;
-   buttonIsActiveControl();
+    buttonIsActiveControl();
   }
-
-  
 
   // providerdan verileri tasarıma getirmek için
   bool get buttonIsActive => _buttonIsActive;
 
-  TextEditingController get messageTextEditingController => _messageTextEditingController;
+  TextEditingController get messageTextEditingController =>
+      _messageTextEditingController;
 
-  TextEditingController get subjectTextEditingController => _subjectTextEditingController;
-
+  TextEditingController get subjectTextEditingController =>
+      _subjectTextEditingController;
 }
+ 

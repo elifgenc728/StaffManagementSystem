@@ -9,6 +9,7 @@ void main() {
     ChangeNotifierProvider(
       create: (_) => ButtonControlProvider(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: MyApp(),
       ),
     ),

@@ -143,8 +143,8 @@ class _CustomTimeChipsState extends State<CustomTimeChips> {
                   children: [
                     Expanded(
                       child: Container(
-                        height: 32,
-                        padding: EdgeInsets.only(right: 8),
+                        height: 40,
+                        // padding: EdgeInsets.only(right: 8),
                         child: CustomBorderTextField(
                           prefixIcon: Icons.alarm,
                           width: 16,

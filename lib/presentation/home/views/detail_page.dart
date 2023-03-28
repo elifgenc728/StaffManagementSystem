@@ -365,6 +365,7 @@ class CustomBorderTextField extends StatelessWidget {
     this.maxLines,
     this.onChanged,
     this.textEditingController,
+    this.decoration,
   });
 
   final String? labelText;
@@ -375,12 +376,14 @@ class CustomBorderTextField extends StatelessWidget {
   final int? maxLines;
   final Function(String)? onChanged;
   final TextEditingController? textEditingController;
+  final InputDecoration? decoration;
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: textEditingController,
       onChanged: onChanged,
       maxLines: maxLines,
+      
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderSide: BorderSide(width: 1, color: Colors.grey),
