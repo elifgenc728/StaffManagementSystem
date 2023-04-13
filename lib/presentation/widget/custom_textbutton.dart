@@ -19,6 +19,7 @@ class CustomDetailTextButton extends StatelessWidget {
           children: [
             Text('Detay',
                 style: TextStyle(
+                    fontSize: 15.2,
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline,
                     color: Colors.blue[900])),

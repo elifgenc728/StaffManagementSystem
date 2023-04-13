@@ -27,3 +27,14 @@ ThemeData getThemeData() {
         ),
       ));
 }
+
+class ThemeNotifier extends ChangeNotifier{ // sayfalar arasnda etkileşim buradan etkilenecekse extends edilir
+  bool isLightTheme = false;
+
+  void changeTheme() {
+    isLightTheme = !isLightTheme;
+  }
+
+  ThemeData get currentTheme =>
+      isLightTheme ? ThemeData.light() : ThemeData.dark();
+}

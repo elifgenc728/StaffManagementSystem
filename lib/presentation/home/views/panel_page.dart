@@ -80,37 +80,39 @@ class _PanelPageState extends State<PanelPage> {
             ),
             Expanded(
               flex: 3,
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Text(
-                        "Son Bir Haftalık Kuruma Göre İstek Sayısı İstatistiği",
-                        style: TextStyle(
-                            fontSize: 16.5, fontWeight: FontWeight.w700),
-                        textAlign: TextAlign.start,
+              child: SingleChildScrollView(
+                child: Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Text(
+                          "Son Bir Haftalık Kuruma Göre İstek Sayısı İstatistiği",
+                          style: TextStyle(
+                              fontSize: 16.5, fontWeight: FontWeight.w700),
+                          textAlign: TextAlign.start,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    SfCartesianChart(
-                        enableMultiSelection: true,
-                        primaryXAxis: CategoryAxis(),
-                        primaryYAxis:
-                            NumericAxis(minimum: 0, maximum: 60, interval: 5),
-                        tooltipBehavior: _tooltip,
-                        series: <ChartSeries<ChartData, String>>[
-                          BarSeries<ChartData, String>(
-                              dataSource: data,
-                              xValueMapper: (ChartData data, _) => data.x,
-                              yValueMapper: (ChartData data, _) => data.y,
-                              name: 'İstek Sayısı',
-                              color: Color.fromRGBO(115, 128, 138, 1)),
-                        ]),
-                  ],
+                      SizedBox(
+                        height: 10,
+                      ),
+                      SfCartesianChart(
+                          enableMultiSelection: true,
+                          primaryXAxis: CategoryAxis(),
+                          primaryYAxis:
+                              NumericAxis(minimum: 0, maximum: 60, interval: 5),
+                          tooltipBehavior: _tooltip,
+                          series: <ChartSeries<ChartData, String>>[
+                            BarSeries<ChartData, String>(
+                                dataSource: data,
+                                xValueMapper: (ChartData data, _) => data.x,
+                                yValueMapper: (ChartData data, _) => data.y,
+                                name: 'İstek Sayısı',
+                                color: Color.fromRGBO(115, 128, 138, 1)),
+                          ]),
+                    ],
+                  ),
                 ),
               ),
             ),

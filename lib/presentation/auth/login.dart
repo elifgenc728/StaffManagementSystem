@@ -11,47 +11,34 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _textEditingController = TextEditingController();
-
-  @override
-  void dispose() {
-    _textEditingController.clear();
-    super.dispose();
-  }
-
-  bool isEmailCorrect = false;
   final _formKey = GlobalKey<FormState>();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Hoş Geldiniz',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                  ),
-
-                  const SizedBox(
-                    height: 30,
-                  ),
-
-                  Form(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Hoş Geldiniz',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                SingleChildScrollView(
+                  child: Form(
                     key: _formKey,
                     child: Column(
                       children: [
                         Container(
-                          height: isEmailCorrect ? 280 : 200,
-                          // _formKey!.currentState!.validate() ? 200 : 600,
-                          // height: isEmailCorrect ? 260 : 182,
                           width: MediaQuery.of(context).size.width / 1.1,
                           decoration: BoxDecoration(
                               color: Colors.white.withOpacity(0.3),
@@ -59,12 +46,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Column(
                             children: [
                               TextFormField(
-                                controller: _textEditingController,
-                                onChanged: (val) {
-                                  setState(() {
-                                    //isEmailCorrect = isEmail(val);
-                                  });
+                                validator: (value) {
+                                  return (value?.isNotEmpty ?? false)
+                                      ? null
+                                      : 'Mailinizi giriniz.';
                                 },
+                                controller: emailController,
                                 decoration: InputDecoration(
                                   prefixIcon: Icon(
                                     Icons.person,
@@ -79,7 +66,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                               ),
+                              SizedBox(
+                                height: 8,
+                              ),
                               TextFormField(
+                                controller: passwordController,
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "Şifrenizi giriniz.";
+                                  }
+                                },
                                 obscuringCharacter: '*',
                                 obscureText: true,
                                 decoration: InputDecoration(
@@ -95,26 +91,28 @@ class _LoginScreenState extends State<LoginScreen> {
                                     color: Colors.blue[900],
                                   ),
                                 ),
-                                validator: (value) {
-                                  if (value!.isEmpty && value.length < 5) {
-                                    return 'Enter a valid password';
-                                    {
-                                      return null;
-                                    }
-                                  }
-                                },
+                                // validator: (value) {
+                                //   if (value!.isEmpty && value.length < 5) {
+                                //     return 'Enter a valid password';
+                                //     {
+                                //       return null;
+                                //     }
+                                //   }
+                                // },
                               ),
                               const SizedBox(
                                 height: 30,
                               ),
                               Container(
-                                width: MediaQuery.of(context).size.width - 100,
+                                width: 300,
                                 child: ElevatedButton(
                                     onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => PanelPage()));
+                                      if (_formKey.currentState!.validate()) {
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    PanelPage()));
+                                      }
                                     },
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(
@@ -131,10 +129,25 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
                   ),
-
-                  //
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                RichText(
+                    text: TextSpan(
+                        text: "Kullanıcı girişi için ",
+                        style: TextStyle(fontSize: 15, color: Colors.black),
+                        children: <TextSpan>[
+                      TextSpan(
+                          onEnter: (event) {},
+                          text: "Admin Giriş",
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.blue[900]))
+                    ]))
+              ],
             ),
           ),
         ),

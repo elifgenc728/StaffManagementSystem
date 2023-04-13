@@ -33,11 +33,11 @@ class _CustomPriorityChipsState extends State<CustomPriorityChips> {
             Divider(
               thickness: 2,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 28.0),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
               child: Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 25.0,
+                spacing: 20.0,
                 children: List<Widget>.generate(5, (int index) {
                   return FilterChip(
                       label: Text(choiceChipsLists[index]),

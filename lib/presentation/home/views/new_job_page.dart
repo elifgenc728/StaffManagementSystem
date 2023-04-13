@@ -13,46 +13,47 @@ class NewJobPage extends StatefulWidget {
 }
 
 class _NewJobPageState extends State<NewJobPage> {
-  TextEditingController? _subjectTextEditingController;
-  TextEditingController? _messageTextEditingController;
+  late TextEditingController subject;
+  late TextEditingController message;
+  late final ButtonControlProvider buttonControlProvider;
 
   @override
   void initState() {
-    final buttonControlProvider =
+    buttonControlProvider =
         Provider.of<ButtonControlProvider>(context, listen: false);
+
     super.initState();
-    _subjectTextEditingController = TextEditingController(
+    subject = TextEditingController(
         text: buttonControlProvider.subjectTextEditingController.text);
-    _messageTextEditingController = TextEditingController(
+    message = TextEditingController(
         text: buttonControlProvider.messageTextEditingController.text);
   }
 
   @override
   void dispose() {
-    _subjectTextEditingController?.dispose();
-    _messageTextEditingController?.dispose();
+    subject.dispose();
+    message.dispose();
+
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final ButtonControlProvider buttonControlProvider =
-        Provider.of<ButtonControlProvider>(context);
-
     //provider sınıfına ulaşmak için nesne oluşturma
     return Scaffold(
-        floatingActionButton: buttonControlProvider.buttonIsActive
-            ? FloatingActionButton.extended(
-                backgroundColor: Colors.blue[900],
-                label: Text(' Gönder'),
-                icon: Icon(
-                  Icons.send_sharp,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  _showSuccesAlertDialog(context);
-                })
-            : null,
+        floatingActionButton:
+            Provider.of<ButtonControlProvider>(context).buttonIsActive
+                ? FloatingActionButton.extended(
+                    backgroundColor: Colors.blue[900],
+                    label: Text(' Gönder'),
+                    icon: Icon(
+                      Icons.send_sharp,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      _showSuccesAlertDialog(context);
+                    })
+                : null,
         appBar: AppBar(
           title: Text('Yeni Hizmet İsteği'),
         ),
@@ -131,11 +132,25 @@ class _NewJobPageState extends State<NewJobPage> {
                 SizedBox(
                   height: 15,
                 ),
-                _buildSubjectTextField(buttonControlProvider),
-                SizedBox(
-                  height: 15,
+                Column(
+                  children: [
+                    _buildSubjectTextField(
+                      textEditingController: subject,
+                      onChanged: (val) {
+                        buttonControlProvider.setSubjectText(val);
+                      },
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    _buildMessageTextField(
+                      textEditingController: message,
+                      onChanged: (val) {
+                        buttonControlProvider.setMessageText(val);
+                      },
+                    ),
+                  ],
                 ),
-                _buildMessageTextField(buttonControlProvider),
                 SizedBox(
                   height: 15,
                 ),
@@ -154,22 +169,26 @@ class _NewJobPageState extends State<NewJobPage> {
     CoolAlertCustom.successCoolAlert(context);
   }
 
-  CustomBorderTextField _buildMessageTextField(buttonControlProvider) {
+  Widget _buildMessageTextField(
+      {Function(String)? onChanged,
+      required TextEditingController textEditingController}) {
     return CustomBorderTextField(
       //provider'a yollanan text(setmessagetext'e yollanıyor)
-      onChanged: (value) => buttonControlProvider.setMessageText(value),
-      textEditingController: _messageTextEditingController,
+      onChanged: onChanged,
+      textEditingController: textEditingController,
       labelText: "Mesaj",
       hintText: 'Mesajınızı giriniz',
       prefixIcon: Icons.message_rounded,
     );
   }
 
-  CustomBorderTextField _buildSubjectTextField(buttonControlProvider) {
+  Widget _buildSubjectTextField(
+      {Function(String)? onChanged,
+      required TextEditingController textEditingController}) {
     return CustomBorderTextField(
-      onChanged: (value) => buttonControlProvider.setSubjectText(value),
+      onChanged: onChanged,
 
-      textEditingController: _subjectTextEditingController,
+      textEditingController: textEditingController,
       labelText: "Konu",
       hintText: "Konu giriniz.",
       // width: 350,
