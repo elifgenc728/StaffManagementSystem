@@ -17,32 +17,32 @@ class JobPool extends StatefulWidget {
 }
 
 class _JobPoolState extends State<JobPool> {
-  late final List<JobPoolModel> _items;
+  late final List<CollectionModel> _items;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _items = [
-  //     CollectionModel(
-  //         atananKisi: ' Elif GENÇ',
-  //         gonderenKisi: 'Mehmet YILMAZ',
-  //         tarih: '26/04/2023',
-  //         saat: '11.04',
-  //         durum: 'devam ediyor'),
-  //     CollectionModel(
-  //         atananKisi: ' Sema ŞAHİN',
-  //         gonderenKisi: 'Mehmet YILMAZ',
-  //         tarih: '26/04/2023',
-  //         saat: '12.15',
-  //         durum: 'devam ediyor'),
-  //     CollectionModel(
-  //         atananKisi: ' Ali ÖZTEN',
-  //         gonderenKisi: 'Mehmet YILMAZ',
-  //         tarih: '26/04/2023',
-  //         saat: '16.44',
-  //         durum: 'devam ediyor'),
-  //   ];
-  // }
+  @override
+  void initState() {
+    super.initState();
+    _items = [
+      CollectionModel(
+          atananKisi: ' Elif GENÇ',
+          gonderenKisi: 'Mehmet YILMAZ',
+          tarih: '26/04/2023',
+          saat: '11.04',
+          durum: 'devam ediyor'),
+      CollectionModel(
+          atananKisi: ' Sema ŞAHİN',
+          gonderenKisi: 'Mehmet YILMAZ',
+          tarih: '26/04/2023',
+          saat: '12.15',
+          durum: 'devam ediyor'),
+      CollectionModel(
+          atananKisi: ' Ali ÖZTEN',
+          gonderenKisi: 'Mehmet YILMAZ',
+          tarih: '26/04/2023',
+          saat: '16.44',
+          durum: 'devam ediyor'),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
