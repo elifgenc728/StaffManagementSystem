@@ -1,13 +1,11 @@
-import 'dart:ffi';
+import 'dart:io';
 
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:mia_support_system/domain/model/job_pool_model.dart';
+import 'package:mia_support_system/domain/model/jobs_model.dart';
 
-import '../../widget/custom_drawer.dart';
-import '../../widget/custom_dropdown.dart';
 import '../../widget/custom_popupmenu.dart';
 import '../../widget/custom_textbutton.dart';
-import 'detail_page.dart';
 
 class JobPool extends StatefulWidget {
   const JobPool({Key? key}) : super(key: key);
@@ -17,31 +15,25 @@ class JobPool extends StatefulWidget {
 }
 
 class _JobPoolState extends State<JobPool> {
-  late final List<CollectionModel> _items;
-
+  List<JobsModel>? _items;
   @override
   void initState() {
     super.initState();
-    _items = [
-      CollectionModel(
-          atananKisi: ' Elif GENÇ',
-          gonderenKisi: 'Mehmet YILMAZ',
-          tarih: '26/04/2023',
-          saat: '11.04',
-          durum: 'devam ediyor'),
-      CollectionModel(
-          atananKisi: ' Sema ŞAHİN',
-          gonderenKisi: 'Mehmet YILMAZ',
-          tarih: '26/04/2023',
-          saat: '12.15',
-          durum: 'devam ediyor'),
-      CollectionModel(
-          atananKisi: ' Ali ÖZTEN',
-          gonderenKisi: 'Mehmet YILMAZ',
-          tarih: '26/04/2023',
-          saat: '16.44',
-          durum: 'devam ediyor'),
-    ];
+    fetchPostItems();
+  }
+
+  Future<void> fetchPostItems() async {
+    final response = await Dio().get('http://localhost:3000/jobs');
+
+    if (response.statusCode == HttpStatus.ok) {
+      final _datas = response.data;
+
+      if (_datas is List) {
+        setState(() {
+          _items = _datas.map((e) => JobsModel.fromJson(e)).toList();
+        });
+      }
+    }
   }
 
   @override
@@ -59,7 +51,7 @@ class _JobPoolState extends State<JobPool> {
             title: Text('Genel İş Havuzu'),
           ),
           body: ListView.builder(
-              itemCount: _items.length,
+              itemCount: _items?.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(9.0),
@@ -74,7 +66,7 @@ class _JobPoolState extends State<JobPool> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  _items[index].atananKisi,
+                                  _items?.name,
                                   style: TextStyle(fontSize: 18),
                                 ),
                                 Text(
@@ -132,13 +124,13 @@ class _JobPoolState extends State<JobPool> {
                                             SizedBox(
                                               width: 8,
                                             ),
-                                            Text(
-                                              _items[index].tarih,
-                                            ),
+                                            // Text(
+                                            //   _items[index].tarih,
+                                            // ),
                                             Text(' - '),
-                                            Text(
-                                              _items[index].saat,
-                                            ),
+                                            // Text(
+                                            //   _items[index].saat,
+                                            // ),
                                           ],
                                         ),
                                         SizedBox(
@@ -170,10 +162,10 @@ class _JobPoolState extends State<JobPool> {
                                             SizedBox(
                                               width: 8,
                                             ),
-                                            Text(
-                                              _items[index].gonderenKisi,
-                                              style: TextStyle(fontSize: 15),
-                                            ),
+                                            // Text(
+                                            //   _items[index].gonderenKisi,
+                                            //   style: TextStyle(fontSize: 15),
+                                            // ),
                                             SizedBox(
                                               width: 12,
                                             ),

@@ -140,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         children: <TextSpan>[
                       TextSpan(
                           onEnter: (event) {},
-                          text: "Admin Giriş",
+                          text: "Kullanıcı Giriş",
                           style: TextStyle(
                               decoration: TextDecoration.underline,
                               fontWeight: FontWeight.bold,

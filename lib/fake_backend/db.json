@@ -1,0 +1,84 @@
+{
+    "jobs": [
+        {
+            "jobId": 1,
+            "userId": 1,
+            "name": "Gökalp DEMİR",
+            "institute": "Uludağ Üniversitesi",
+            "date": "17/04/2023 - 08.40",
+            "time": " ",
+            "subject": "1839 Hatasına Takılanlar"
+        },
+        {
+            "jobId": 2,
+            "userId": 2,
+            "name": "Hakan ERTUĞ",
+            "date": "17/04/2023 - 10.49",
+            "institute": "Düzce Üniversitesi",
+            "time": " ",
+            "subject": "Labaratuvar Düşmeyen Tetkik"
+        },
+        {
+            "jobId": 3,
+            "userId": 2,
+            "name": "Mehmet Emin YÜKSEL",
+            "date": "14/04/2023 - 09.01",
+            "institute": "Adnan Menderes Üniversitesi",
+            "time": " ",
+            "subject": "Özel Bir Sorgu Hakkında"
+        }
+    ],
+    "users":[
+        {
+            "userId":1 ,
+            "userName": "Osman ÇEBİN"
+        },
+        {
+            "userId":2 ,
+            "userName": "Mahmut POLAT"
+        },
+        {
+            "userId":3 ,
+            "userName": "Nur ÇELİK"
+        },
+        {
+            "userId":4 ,
+            "userName": "Sefa DOĞAN"
+        }
+    ],
+
+    "messageDetail":{
+        "hospital":"",
+        "job_requested_user":"",
+        "subject":"",
+        "request_date":"",
+        "state":"",
+        "level":"",
+        "request_type":"",
+        "messages":[
+            {
+                "userName":"Elif",
+                "message":"Elif Mesaj texti",
+                "attach": "http//:....",
+                "date":"21.09.1995"
+            },
+            {
+                "userName":"Elif",
+                "message":"Elif Mesaj texti",
+                "attach": "http//:....",
+                "date":"21.09.1995"
+            },
+            {
+                "userName":"Elif",
+                "message":"Elif Mesaj texti",
+                "attach": "http//:....",
+                "date":"21.09.1995"
+            }, {
+                "userName":"Elif",
+                "message":"Elif Mesaj texti",
+                "attach": "http//:....",
+                "date":"21.09.1995"
+            }
+        ]
+    } 
+}
