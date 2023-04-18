@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mia_support_system/presentation/home/views/panel_page.dart';
 
-import '../home/views/job_pool.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -51,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ? null
                                       : 'Mailinizi giriniz.';
                                 },
-                                controller: emailController,
+                                controller: ,
                                 decoration: InputDecoration(
                                   prefixIcon: Icon(
                                     Icons.person,

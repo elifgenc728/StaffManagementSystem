@@ -31,19 +31,23 @@
     "users":[
         {
             "userId":1 ,
-            "userName": "Osman ÇEBİN"
+            "userName": "osman.cebin",
+            "password": "12345"
         },
         {
             "userId":2 ,
-            "userName": "Mahmut POLAT"
+            "userName": "mahmut.polat",
+            "password": "12345"
         },
         {
             "userId":3 ,
-            "userName": "Nur ÇELİK"
+            "userName": "nur.celik",
+            "password": "12345"
         },
         {
             "userId":4 ,
-            "userName": "Sefa DOĞAN"
+            "userName": "sefa.dogan",
+            "password": "12345"
         }
     ],
 

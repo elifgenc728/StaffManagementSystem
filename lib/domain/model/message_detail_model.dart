@@ -1,24 +1,4 @@
 class MessageDetailModel {
-  MessageDetail? messageDetail;
-
-  MessageDetailModel({this.messageDetail});
-
-  MessageDetailModel.fromJson(Map<String, dynamic> json) {
-    messageDetail = json['messageDetail'] != null
-        ? new MessageDetail.fromJson(json['messageDetail'])
-        : null;
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.messageDetail != null) {
-      data['messageDetail'] = this.messageDetail!.toJson();
-    }
-    return data;
-  }
-}
-
-class MessageDetail {
   String? hospital;
   String? jobRequestedUser;
   String? subject;
@@ -28,7 +8,7 @@ class MessageDetail {
   String? requestType;
   List<Messages>? messages;
 
-  MessageDetail(
+  MessageDetailModel(
       {this.hospital,
       this.jobRequestedUser,
       this.subject,
@@ -38,7 +18,7 @@ class MessageDetail {
       this.requestType,
       this.messages});
 
-  MessageDetail.fromJson(Map<String, dynamic> json) {
+  MessageDetailModel.fromJson(Map<String, dynamic> json) {
     hospital = json['hospital'];
     jobRequestedUser = json['job_requested_user'];
     subject = json['subject'];

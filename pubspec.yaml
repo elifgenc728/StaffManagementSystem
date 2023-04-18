@@ -45,6 +45,7 @@ dependencies:
   cool_alert: ^2.0.1
   provider: ^6.0.2
   dio: ^5.1.1
+  flutter_bloc: ^8.1.2
 
 
 dev_dependencies:

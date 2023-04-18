@@ -3,17 +3,18 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:mia_support_system/domain/constant/api_constant.dart';
 import 'package:mia_support_system/domain/model/jobs_model.dart';
+import 'package:mia_support_system/domain/model/users_model.dart';
 
-class JobPoolService {
-  Future<List<JobsModel>?> getJobsService() async {
+class LoginService {
+  Future<List<UsersModel>?> getJobsService() async {
     final response = await Dio().get(ApiConstant.jobPoolEndPoint);
-    List<JobsModel>? items;
+    List<UsersModel>? itemUsers;
 
     if (response.statusCode == HttpStatus.ok) {
-      final datas = response.data['jobs'];
+      final datas = response.data['users'];
 
       if (datas is List) {
-        items = datas.map((e) => JobsModel.fromJson(e)).toList();
+        itemUsers = datas.map((e) => UsersModel.fromJson(e)).toList();
       } else {
 
         //Liste değilse napcak kardeşim
@@ -22,7 +23,7 @@ class JobPoolService {
       throw Exception('Failed to load Categories from API');
     }
 
-    return items;
+    return itemUsers;
   }
 
   

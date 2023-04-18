@@ -1,27 +1,4 @@
 class JobsModel {
-  List<Jobs>? jobs;
-
-  JobsModel({this.jobs});
-
-  JobsModel.fromJson(Map<String, dynamic> json) {
-    if (json['jobs'] != null) {
-      jobs = <Jobs>[];
-      json['jobs'].forEach((v) {
-        jobs!.add(new Jobs.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.jobs != null) {
-      data['jobs'] = this.jobs!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
-
-class Jobs {
   int? jobId;
   int? userId;
   String? name;
@@ -30,7 +7,7 @@ class Jobs {
   String? time;
   String? subject;
 
-  Jobs(
+  JobsModel(
       {this.jobId,
       this.userId,
       this.name,
@@ -39,7 +16,7 @@ class Jobs {
       this.time,
       this.subject});
 
-  Jobs.fromJson(Map<String, dynamic> json) {
+  JobsModel.fromJson(Map<String, dynamic> json) {
     jobId = json['jobId'];
     userId = json['userId'];
     name = json['name'];
