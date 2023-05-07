@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ? null
                                       : 'Mailinizi giriniz.';
                                 },
-                                controller: ,
+                                controller: emailController,
                                 decoration: InputDecoration(
                                   prefixIcon: Icon(
                                     Icons.person,
