@@ -24,18 +24,21 @@ class UsersModel {
 class Users {
   int? userId;
   String? userName;
+  String? password;
 
-  Users({this.userId, this.userName});
+  Users({this.userId, this.userName, this.password});
 
   Users.fromJson(Map<String, dynamic> json) {
     userId = json['userId'];
     userName = json['userName'];
+    password = json['password'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['userId'] = this.userId;
     data['userName'] = this.userName;
+    data['password'] = this.password;
     return data;
   }
 }

@@ -23,7 +23,7 @@ class _JobPoolState extends State<JobPool> {
   }
 
   Future<void> fetchPostItems() async {
-    final response = await Dio().get('https://mocki.io/v1/643efa4f-ad7c-49f8-9baa-0a61266838f2/jobs');
+    final response = await Dio().get('https://mocki.io/v1/643efa4f-ad7c-49f8-9baa-0a61266838f2');
 
     if (response.statusCode == HttpStatus.ok) {
       final _datas = response.data;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mia_support_system/domain/model/users_model.dart';
 import 'package:mia_support_system/presentation/home/views/panel_page.dart';
-
+import 'package:mia_support_system/presentation/auth/login.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -58,8 +59,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                   filled: true,
                                   fillColor: Colors.white,
-                                  labelText: "Email",
-                                  hintText: 'your-email@domain.com',
+                                  labelText: "Kullanıcı Adı",
+                                  hintText: 'user.name',
                                   labelStyle: TextStyle(
                                     color: Colors.blue[900],
                                   ),
@@ -107,10 +108,22 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: ElevatedButton(
                                     onPressed: () {
                                       if (_formKey.currentState!.validate()) {
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    PanelPage()));
+                                        if (emailController.text.toString() ==
+                                                Users().userName &&
+                                            passwordController.text
+                                                    .toString() ==
+                                                Users().password)
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      PanelPage()));
+                                      } else {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          const SnackBar(
+                                              content:
+                                                  Text('Invalid Credentials')),
+                                        );
                                       }
                                     },
                                     child: Padding(

@@ -6,8 +6,8 @@ import 'package:mia_support_system/domain/model/jobs_model.dart';
 import 'package:mia_support_system/domain/model/users_model.dart';
 
 class LoginService {
-  Future<List<UsersModel>?> getJobsService() async {
-    final response = await Dio().get(ApiConstant.jobPoolEndPoint);
+  Future<List<UsersModel>?> getUsersService() async {
+    final response = await Dio().post(ApiConstant.jobPoolEndPoint);
     List<UsersModel>? itemUsers;
 
     if (response.statusCode == HttpStatus.ok) {
@@ -16,7 +16,6 @@ class LoginService {
       if (datas is List) {
         itemUsers = datas.map((e) => UsersModel.fromJson(e)).toList();
       } else {
-
         //Liste değilse napcak kardeşim
       }
     } else {
@@ -25,6 +24,4 @@ class LoginService {
 
     return itemUsers;
   }
-
-  
 }
