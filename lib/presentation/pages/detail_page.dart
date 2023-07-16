@@ -34,7 +34,7 @@ class _DetailPageState extends State<DetailPage> {
         child: ListView(
           children: <Widget>[
             ExpansionTileCard(
-              baseColor: Colors.blue[50],
+              baseColor: Colors.green[50],
               expandedColor: Colors.white,
               key: cardA,
               // leading:
@@ -53,7 +53,7 @@ class _DetailPageState extends State<DetailPage> {
                         ),
                         TextSpan(
                             text:
-                                "Çanakkale Onsekiz Mart Üniversitesi Hastanesi",
+                                "Çanakkale AVM",
                             style: TextStyle(color: Colors.black)),
                       ]),
                     ),
@@ -66,7 +66,7 @@ class _DetailPageState extends State<DetailPage> {
                               fontWeight: FontWeight.bold, color: Colors.black),
                         ),
                         TextSpan(
-                            text: "Ali ÖZTEN",
+                            text: "Sinem ÖZEN",
                             style: TextStyle(color: Colors.black)),
                       ]),
                     ),
@@ -79,7 +79,7 @@ class _DetailPageState extends State<DetailPage> {
                               fontWeight: FontWeight.bold, color: Colors.black),
                         ),
                         TextSpan(
-                            text: "Etkin Maddenin İlave Değeri hk.",
+                            text: "Seçili Alanın Düzenlenmesi",
                             style: TextStyle(color: Colors.black)),
                       ]),
                     ),
@@ -173,7 +173,7 @@ class _DetailPageState extends State<DetailPage> {
             ),
             Card(
               elevation: 20,
-              color: Colors.blue[100],
+              color: Colors.green[100],
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(
@@ -186,12 +186,12 @@ class _DetailPageState extends State<DetailPage> {
                 children: [
                   ListTile(
                     leading: CircleAvatar(
-                        backgroundColor: Colors.blue[50],
+                        backgroundColor: Colors.green[50],
                         child: Icon(
                           Icons.account_circle_outlined,
                           color: Colors.black54,
                         )),
-                    title: Text("Elif Genç"),
+                    title: Text("Ekin KARTAL"),
                     subtitle: Text("22/12/2023"),
                   ),
                   Divider(
@@ -262,12 +262,12 @@ class _DetailPageState extends State<DetailPage> {
                 children: [
                   ListTile(
                     leading: CircleAvatar(
-                        backgroundColor: Colors.blue[50],
+                        backgroundColor: Colors.green[50],
                         child: Icon(
                           Icons.account_circle_outlined,
                           color: Colors.black54,
                         )),
-                    title: Text("Sena Çelik"),
+                    title: Text("Suzan ÇETİN"),
                     subtitle: Text("22/12/2023"),
                   ),
                   Divider(
@@ -328,18 +328,20 @@ class _DetailPageState extends State<DetailPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
+        
           label: Text(
             'Mesaj Ekle',
             style: TextStyle(fontSize: 20),
           ),
           icon: Icon(Icons.post_add_outlined),
-          backgroundColor: Colors.blue[900],
+          backgroundColor: Colors.green[900],
           onPressed: () {
             showDialog(
               barrierDismissible: false,
               context: context,
               builder: (context) {
                 return StatefulBuilder(
+                  
                   builder: (context, setState) {
                     return SingleChildScrollView(
                       child: Custom_MessageAlertDialog(context, setState),

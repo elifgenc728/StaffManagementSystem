@@ -1,39 +1,28 @@
-import 'dart:io';
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:mia_support_system/domain/model/jobs_model.dart';
 
-import '../../widget/custom_popupmenu.dart';
 import '../../widget/custom_textbutton.dart';
 
-class JobPool extends StatefulWidget {
-  const JobPool({Key? key}) : super(key: key);
+class MyJobPool extends StatefulWidget {
+  const MyJobPool({super.key});
 
   @override
-  State<JobPool> createState() => _JobPoolState();
+  State<MyJobPool> createState() => _MyJobPoolState();
 }
 
-class _JobPoolState extends State<JobPool> {
-  List<JobsModel>? _items;
+class _MyJobPoolState extends State<MyJobPool> {
+  late final List<MyJobs> items;
+
   @override
   void initState() {
     super.initState();
-    fetchPostItems();
-  }
-
-  Future<void> fetchPostItems() async {
-    final response = await Dio().get('https://mocki.io/v1/643efa4f-ad7c-49f8-9baa-0a61266838f2');
-
-    if (response.statusCode == HttpStatus.ok) {
-      final _datas = response.data;
-
-      if (_datas is List) {
-        setState(() {
-          _items = _datas.map((e) => JobsModel.fromJson(e)).toList();
-        });
-      }
-    }
+    items = [
+      MyJobs(
+          atananKisi: ' Elif GENÇ',
+          gonderenKisi: 'Selim YILMAZ',
+          tarih: '26.04.2023',
+          saat: '11:04',
+          durum: 'devam ediyor'),
+    ];
   }
 
   @override
@@ -48,10 +37,10 @@ class _JobPoolState extends State<JobPool> {
               },
             ),
             automaticallyImplyLeading: false,
-            title: Text('Genel İş Havuzu'),
+            title: Text('Benim İş Havuzum'),
           ),
           body: ListView.builder(
-              itemCount: _items?.length,
+              itemCount: items.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(9.0),
@@ -66,11 +55,11 @@ class _JobPoolState extends State<JobPool> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  _items?[index].name ?? '',
+                                  items[index].atananKisi,
                                   style: TextStyle(fontSize: 18),
                                 ),
                                 Text(
-                                  "Çanakkale 18 Mart Üniversitesi",
+                                  "Çanakkale AVM",
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
@@ -85,22 +74,20 @@ class _JobPoolState extends State<JobPool> {
                               Row(
                                 children: [
                                   Icon(Icons.donut_large_sharp,
-                                      color: Colors.blue[900], size: 16),
+                                      color: Colors.green[900], size: 16),
                                   SizedBox(
                                     width: 8,
                                   ),
                                   Expanded(
-                                    flex: 6,
+                                    flex: 1,
                                     child: Text(
-                                      "Refakatçi Makbuz Sorgulama Hakkında Bilgileri güncelleme",
+                                      "AVM Eksikliklerinin Giderilmesi",
                                       maxLines: 2,
                                       style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
                                   ),
-                                  Expanded(
-                                      flex: 1, child: CustomPopupMenuWidget()),
                                 ],
                               ),
                               SizedBox(
@@ -119,18 +106,18 @@ class _JobPoolState extends State<JobPool> {
                                         Row(
                                           children: [
                                             Icon(Icons.calendar_today_outlined,
-                                                color: Colors.blue[900],
+                                                color: Colors.green[900],
                                                 size: 16),
                                             SizedBox(
                                               width: 8,
                                             ),
-                                            // Text(
-                                            //   _items[index].tarih,
-                                            // ),
+                                            Text(
+                                              items[index].tarih,
+                                            ),
                                             Text(' - '),
-                                            // Text(
-                                            //   _items[index].saat,
-                                            // ),
+                                            Text(
+                                              items[index].saat,
+                                            ),
                                           ],
                                         ),
                                         SizedBox(
@@ -141,7 +128,7 @@ class _JobPoolState extends State<JobPool> {
                                             Icon(
                                               Icons.alarm_rounded,
                                               size: 16,
-                                              color: Colors.blue[900],
+                                              color: Colors.green[900],
                                             ),
                                             SizedBox(
                                               width: 8,
@@ -157,17 +144,14 @@ class _JobPoolState extends State<JobPool> {
                                             Icon(
                                               Icons.person,
                                               size: 16,
-                                              color: Colors.blue[900],
+                                              color: Colors.green[900],
                                             ),
                                             SizedBox(
                                               width: 8,
                                             ),
-                                            // Text(
-                                            //   _items[index].gonderenKisi,
-                                            //   style: TextStyle(fontSize: 15),
-                                            // ),
-                                            SizedBox(
-                                              width: 12,
+                                            Text(
+                                              items[index].gonderenKisi,
+                                              style: TextStyle(fontSize: 15),
                                             ),
                                           ],
                                         ),
@@ -178,13 +162,13 @@ class _JobPoolState extends State<JobPool> {
                                           children: [
                                             Icon(
                                               Icons.app_registration_rounded,
-                                              color: Colors.blue[900],
+                                              color: Colors.green[900],
                                               size: 16,
                                             ),
                                             SizedBox(
                                               width: 8,
                                             ),
-                                            Text('211088'),
+                                            Text('300'),
                                             SizedBox(
                                               width: 245,
                                             ),
@@ -208,14 +192,14 @@ class _JobPoolState extends State<JobPool> {
   }
 }
 
-class CollectionModel {
+class MyJobs {
   final String atananKisi;
   final String gonderenKisi;
   final String durum;
   final String saat;
   final String tarih;
 
-  CollectionModel(
+  MyJobs(
       {required this.atananKisi,
       required this.gonderenKisi,
       required this.tarih,

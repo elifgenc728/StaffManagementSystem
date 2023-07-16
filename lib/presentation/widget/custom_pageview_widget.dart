@@ -33,7 +33,7 @@ class CustomPageViewWidget extends StatelessWidget {
         height: 100,
         child: ListView.builder(
           shrinkWrap: true,
-          itemCount: number.length,
+          itemCount: number.length, 
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Card(
@@ -59,7 +59,7 @@ class CustomPageViewWidget extends StatelessWidget {
                               padding: EdgeInsets.only(bottom: 20),
                               child: Icon(
                                 icons[index],
-                                color: Colors.blue[900],
+                                color: Colors.green[900],
                                 size: 45,
                               ),
                             ),
@@ -75,7 +75,7 @@ class CustomPageViewWidget extends StatelessWidget {
                                   style: TextStyle(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 22,
-                                      color: Colors.blue[800]),
+                                      color: Colors.green[800]),
                                 ),
                               ],
                             )
@@ -85,7 +85,7 @@ class CustomPageViewWidget extends StatelessWidget {
                   SizedBox(height: 16),
                   Container(
                       decoration: BoxDecoration(
-                          color: Colors.blue[900],
+                          color: Colors.green[900],
                           borderRadius: BorderRadius.only(
                               bottomRight: Radius.circular(12),
                               bottomLeft: Radius.circular(12))),

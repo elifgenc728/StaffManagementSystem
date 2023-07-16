@@ -22,14 +22,14 @@ class CustomDetailTextButton extends StatelessWidget {
                     fontSize: 15.2,
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline,
-                    color: Colors.blue[900])),
+                    color: Colors.green[900])),
             SizedBox(
               width: 8,
             ),
             Icon(
               // Icons.supervised_user_circle_rounded,
               Icons.arrow_forward_ios, size: 13,
-              color: Colors.blue[900],
+              color: Colors.green[900],
             ),
           ],
         ),

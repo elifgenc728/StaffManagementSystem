@@ -52,24 +52,15 @@ class _JobPoolState extends State<JobPool> {
                           margin: EdgeInsets.zero,
                           elevation: 50,
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        state.jobList[index].name ?? "-",
-                                        style: TextStyle(fontSize: 18),
-                                      ),
-                                      Text(
-                                        state.jobList[index].subject ?? "",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ]),
+                                Text(
+                                  
+                                  state.jobList[index].name ?? "-",
+                                  style: TextStyle(fontSize: 18),
+                                ),
                                 Divider(
                                   thickness: 2,
                                 ),
@@ -79,7 +70,7 @@ class _JobPoolState extends State<JobPool> {
                                     Row(
                                       children: [
                                         Icon(Icons.donut_large_sharp,
-                                            color: Colors.blue[900], size: 16),
+                                            color: Colors.green[900], size: 16),
                                         SizedBox(
                                           width: 8,
                                         ),
@@ -116,7 +107,7 @@ class _JobPoolState extends State<JobPool> {
                                                   Icon(
                                                       Icons
                                                           .calendar_today_outlined,
-                                                      color: Colors.blue[900],
+                                                      color: Colors.green[900],
                                                       size: 16),
                                                   SizedBox(
                                                     width: 8,
@@ -131,63 +122,63 @@ class _JobPoolState extends State<JobPool> {
                                                   // ),
                                                 ],
                                               ),
+                                              // SizedBox(
+                                              //   height: 4,
+                                              // ),
+                                              // Row(
+                                              //   children: [
+                                              //     Icon(
+                                              //       Icons.alarm_rounded,
+                                              //       size: 16,
+                                              //       color: Colors.blue[900],
+                                              //     ),
+                                              //     SizedBox(
+                                              //       width: 8,
+                                              //     ),
+                                              //     Text(state.jobList[index]
+                                              //             .time ??
+                                              //         "")
+                                              //   ],
+                                              // ),
                                               SizedBox(
                                                 height: 4,
                                               ),
-                                              Row(
-                                                children: [
-                                                  Icon(
-                                                    Icons.alarm_rounded,
-                                                    size: 16,
-                                                    color: Colors.blue[900],
-                                                  ),
-                                                  SizedBox(
-                                                    width: 8,
-                                                  ),
-                                                  Text(state.jobList[index]
-                                                          .time ??
-                                                      "")
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: 4,
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Icon(
-                                                    Icons.person,
-                                                    size: 16,
-                                                    color: Colors.blue[900],
-                                                  ),
-                                                  SizedBox(
-                                                    width: 8,
-                                                  ),
+                                              // Row(
+                                              //   children: [
+                                              //     Icon(
+                                              //       Icons.person,
+                                              //       size: 16,
+                                              //       color: Colors.blue[900],
+                                              //     ),
+                                              //     SizedBox(
+                                              //       width: 8,
+                                              //     ),
                                                   // Text(
                                                   //   _items[index].gonderenKisi,
                                                   //   style: TextStyle(fontSize: 15),
                                                   // ),
-                                                  SizedBox(
-                                                    width: 12,
-                                                  ),
-                                                ],
-                                              ),
+                                                  // SizedBox(
+                                                  //   width: 12,
+                                                  // ),
+                                              //   ],
+                                              // ),
                                               SizedBox(
-                                                height: 4,
+                                                height: 8,
                                               ),
                                               Row(
                                                 children: [
                                                   Icon(
                                                     Icons
                                                         .app_registration_rounded,
-                                                    color: Colors.blue[900],
+                                                    color: Colors.green[900],
                                                     size: 16,
                                                   ),
                                                   SizedBox(
                                                     width: 8,
                                                   ),
-                                                  Text('211088'),
+                                                  Text('30188'),
                                                   SizedBox(
-                                                    width: 245,
+                                                    width: 230,
                                                   ),
                                                   CustomDetailTextButton(),
                                                 ],

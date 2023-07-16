@@ -1,9 +1,9 @@
-class UsersModel {
+class LoginModel {
   List<Users>? users;
 
-  UsersModel({this.users});
+  LoginModel({this.users});
 
-  UsersModel.fromJson(Map<String, dynamic> json) {
+  LoginModel.fromJson(Map<String, dynamic> json) {
     if (json['users'] != null) {
       users = <Users>[];
       json['users'].forEach((v) {
@@ -22,18 +22,21 @@ class UsersModel {
 }
 
 class Users {
+  int? userId;
   String? userName;
   String? password;
 
-  Users({this.userName, this.password});
+  Users({this.userId, this.userName, this.password});
 
   Users.fromJson(Map<String, dynamic> json) {
+    userId = json['userId'];
     userName = json['userName'];
     password = json['password'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['userId'] = this.userId;
     data['userName'] = this.userName;
     data['password'] = this.password;
     return data;

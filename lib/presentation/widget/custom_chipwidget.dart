@@ -41,7 +41,7 @@ class _CustomPriorityChipsState extends State<CustomPriorityChips> {
                 children: List<Widget>.generate(5, (int index) {
                   return FilterChip(
                       label: Text(choiceChipsLists[index]),
-                      selectedColor: Colors.purple[200],
+                      selectedColor: Color.fromARGB(255, 121, 165, 123),
                       selected: _value == index,
                       onSelected: (bool selected) {
                         setState(() {
@@ -96,7 +96,7 @@ class _CustomRequestChipsState extends State<CustomRequestChips> {
                 children: List<Widget>.generate(3, (int index) {
                   return FilterChip(
                       label: Text(requestChipsLists[index]),
-                      selectedColor: Colors.red[200],
+                      selectedColor: Color.fromARGB(255, 121, 165, 123),
                       selected: values == index,
                       onSelected: (bool selected) {
                         setState(() {
@@ -175,7 +175,7 @@ class _CustomTimeChipsState extends State<CustomTimeChips> {
                               itemBuilder: (context, index) => FilterChip(
                                   label: Text(list1[index]),
                                   selected: val == index,
-                                  selectedColor: Colors.blueGrey,
+                                  selectedColor: Color.fromARGB(255, 121, 165, 123),
                                   onSelected: (bool selected) {
                                     setState(() {
                                       val = selected ? index : 0;

@@ -40,13 +40,13 @@ class _CustomPopupMenuWidgetState extends State<CustomPopupMenuWidget> {
                       thickness: 1,
                     ),
                     InkWell(
-                      onTap: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LoginScreen()),
-                        );
-                      },
+                      // onTap: () {
+                      //   Navigator.pushReplacement(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => LoginScreen()),
+                      //   );
+                      // },
                       child: ListTile(
                         leading: Icon(Icons.cancel_presentation_rounded),
                         title: Text('İsteği Kapat'),

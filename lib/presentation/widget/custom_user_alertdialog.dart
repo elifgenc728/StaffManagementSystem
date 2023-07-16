@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mia_support_system/presentation/home/views/detail_page.dart';
+import 'package:mia_support_system/presentation/pages/detail_page.dart';
 import 'package:mia_support_system/presentation/widget/custom_chipwidget.dart';
 import 'package:mia_support_system/presentation/widget/customadd_dropdown.dart';
 import 'package:interval_time_picker/interval_time_picker.dart';
-import 'custom_dropdown.dart';
 
 Future<void> Custom_UserAlertDialog(
     BuildContext context, StateSetter setState) {
@@ -51,7 +50,7 @@ Future<void> Custom_UserAlertDialog(
                     onPressed: () {},
                     child: Text('Kullanıcıya Ata'),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue[900],
+                      backgroundColor: Colors.green[900],
                     ),
                   ),
                 ],

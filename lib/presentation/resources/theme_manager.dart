@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 ThemeData getThemeData() {
   return ThemeData(
+       radioTheme: RadioThemeData(
+        fillColor: MaterialStateColor.resolveWith((states) => Colors.green), //<-- SEE HERE
+      ),
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Colors.green[900],
         centerTitle: true,
         elevation: 5,
       ),

@@ -44,7 +44,7 @@ class _NewJobPageState extends State<NewJobPage> {
         floatingActionButton:
             Provider.of<ButtonControlProvider>(context).buttonIsActive
                 ? FloatingActionButton.extended(
-                    backgroundColor: Colors.blue[900],
+                    backgroundColor: Colors.green[900],
                     label: Text(' Gönder'),
                     icon: Icon(
                       Icons.send_sharp,
@@ -86,7 +86,7 @@ class _NewJobPageState extends State<NewJobPage> {
                                   maxLines: 1,
                                 ),
                                 subtitle: Text(
-                                  "Mia Teknoloji HBYS",
+                                  "Düzce AVM",
                                   style: TextStyle(fontFamily: ' Trajan Pro'),
                                   maxLines: 2,
                                 ),
@@ -100,7 +100,7 @@ class _NewJobPageState extends State<NewJobPage> {
                                   maxLines: 1,
                                 ),
                                 subtitle: Text(
-                                  "Elif GENÇ",
+                                  "Yeşim ÇELİK ",
                                   maxLines: 1,
                                 ),
                               ),

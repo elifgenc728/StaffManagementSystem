@@ -5,7 +5,7 @@ class ButtonControlProvider extends ChangeNotifier {
   final _messageTextEditingController = TextEditingController();
   bool _buttonIsActive = false;
 
-  void buttonIsActiveControl() {
+   buttonIsActiveControl({Color? backgroundColor}) {
     if (_subjectTextEditingController.text.isNotEmpty &&
         _messageTextEditingController.text.isNotEmpty) {
       _buttonIsActive = true;
@@ -15,7 +15,7 @@ class ButtonControlProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-//tasarımdaki text içinde ki valueları providera göndermek için
+//tasarımdaki text içindeki valueları providera göndermek için
   void setSubjectText(value) {
     _subjectTextEditingController.text = value;
     buttonIsActiveControl();

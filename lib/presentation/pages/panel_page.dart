@@ -19,15 +19,15 @@ class _PanelPageState extends State<PanelPage> {
   @override
   void initState() {
     data = [
-      ChartData('Bülent Ecevit Üniversitesi', 10),
-      ChartData('Balıkesir Üniversitesi', 9),
-      ChartData('Akdeniz Üniversitesi', 10),
-      ChartData('Adnan Menderes Üniversitesi', 10),
-      ChartData('Düzce Üniversitesi', 10),
-      ChartData('K.Maraş Sütçü İmam Üniv.', 10),
-      ChartData('Çanakkale 18 Mart Üniv.', 10),
-      ChartData('Uludağ Üniversitesi', 10),
-      ChartData('19 Mayıs Üniversitesi', 10),
+      ChartData('İstanbul AVM', 10),
+      ChartData('Balıkesir AVM', 9),
+      ChartData('Mersin AVM', 10),
+      ChartData('Trabzon AVM', 10),
+      ChartData('Düzce AVM', 10),
+      ChartData('Denizli AVM.', 10),
+      ChartData('Çanakkale AVM.', 10),
+      ChartData('Bursa AVM', 10),
+      ChartData('Elazığ AVM', 10),
     ];
 
     _tooltip = TooltipBehavior(enable: true);
@@ -45,8 +45,8 @@ class _PanelPageState extends State<PanelPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text("Hoşgeldiniz Osman ÇEBİN"),
-              Text("© Mia Teknoloji",
+              Text("Hoşgeldiniz Elif GENÇ"),
+              Text("© HYT Teknoloji",
                   style: TextStyle(fontWeight: FontWeight.bold))
             ],
           ),
@@ -59,7 +59,7 @@ class _PanelPageState extends State<PanelPage> {
               _scaffoldState.currentState?.openDrawer();
             },
             icon: Icon(Icons.menu)),
-        title: Text('HBYS Destek Sistemi'),
+        title: Text('HYT Teknoloji Destek Sistemi'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

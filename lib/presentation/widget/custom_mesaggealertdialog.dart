@@ -81,6 +81,7 @@ StatefulBuilder Custom_MessageAlertDialog(
                 contentPadding: EdgeInsets.all(0),
                 title: const Text('Yapılmayacak'),
                 leading: Radio<Durum>(
+                 
                   value: Durum.d3,
                   groupValue: durum,
                   onChanged: (Durum? value) {
@@ -109,7 +110,7 @@ StatefulBuilder Custom_MessageAlertDialog(
       ),
       actions: <Widget>[
         ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[900]),
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.green[900]),
           onPressed: () {
             Navigator.of(context).pop();
           },

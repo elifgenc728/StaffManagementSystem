@@ -16,7 +16,6 @@ class JobPoolService {
         items = datas.map((e) => JobsModel.fromJson(e)).toList();
       } else {
 
-        //Liste değilse napcak kardeşim
       }
     } else {
       throw Exception('Failed to load Categories from API');
