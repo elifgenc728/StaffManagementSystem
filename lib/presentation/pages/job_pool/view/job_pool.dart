@@ -5,10 +5,12 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mia_support_system/domain/model/jobs_model.dart';
-import 'package:mia_support_system/presentation/home/job_pool/view_model/job_pool_state.dart';
-import 'package:mia_support_system/presentation/home/job_pool/view_model/job_pool_view_model.dart';
+
 import 'package:mia_support_system/presentation/widget/custom_popupmenu.dart';
 import 'package:mia_support_system/presentation/widget/custom_textbutton.dart';
+
+import '../view_model/job_pool_state.dart';
+import '../view_model/job_pool_view_model.dart';
 
 class JobPool extends StatefulWidget {
   const JobPool({Key? key}) : super(key: key);
@@ -116,52 +118,14 @@ class _JobPoolState extends State<JobPool> {
                                                     state.jobList[index].date ??
                                                         "",
                                                   ),
-                                                  // Text(' - '),
-                                                  // Text(
-                                                  //   _items[index].saat,
-                                                  // ),
+                                                  
                                                 ],
                                               ),
-                                              // SizedBox(
-                                              //   height: 4,
-                                              // ),
-                                              // Row(
-                                              //   children: [
-                                              //     Icon(
-                                              //       Icons.alarm_rounded,
-                                              //       size: 16,
-                                              //       color: Colors.blue[900],
-                                              //     ),
-                                              //     SizedBox(
-                                              //       width: 8,
-                                              //     ),
-                                              //     Text(state.jobList[index]
-                                              //             .time ??
-                                              //         "")
-                                              //   ],
-                                              // ),
+                                             
                                               SizedBox(
                                                 height: 4,
                                               ),
-                                              // Row(
-                                              //   children: [
-                                              //     Icon(
-                                              //       Icons.person,
-                                              //       size: 16,
-                                              //       color: Colors.blue[900],
-                                              //     ),
-                                              //     SizedBox(
-                                              //       width: 8,
-                                              //     ),
-                                                  // Text(
-                                                  //   _items[index].gonderenKisi,
-                                                  //   style: TextStyle(fontSize: 15),
-                                                  // ),
-                                                  // SizedBox(
-                                                  //   width: 12,
-                                                  // ),
-                                              //   ],
-                                              // ),
+                                              
                                               SizedBox(
                                                 height: 8,
                                               ),

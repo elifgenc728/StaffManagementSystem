@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../home/views/detail_page.dart';
+import '../pages/detail_page.dart';
+
 
 enum Durum { d1, d2, d3, d4 }
 

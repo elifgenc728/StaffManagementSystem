@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 
-import '../../widget/custom_mesaggealertdialog.dart';
+import '../widget/custom_mesaggealertdialog.dart';
+
 
 class DetailPage extends StatefulWidget {
   @override

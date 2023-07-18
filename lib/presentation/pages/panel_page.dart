@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-import '../../widget/custom_drawer.dart';
-import '../../widget/custom_pageview_widget.dart';
+import '../widget/custom_drawer.dart';
+import '../widget/custom_pageview_widget.dart';
+
 
 class PanelPage extends StatefulWidget {
   const PanelPage({super.key});

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:chips_choice_null_safety/chips_choice_null_safety.dart';
 import 'package:async/async.dart';
 
-import '../home/views/detail_page.dart';
+import '../pages/detail_page.dart';
+
 
 class CustomPriorityChips extends StatefulWidget {
   @override

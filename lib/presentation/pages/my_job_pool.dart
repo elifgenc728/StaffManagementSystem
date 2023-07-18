@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../widget/custom_textbutton.dart';
+import '../widget/custom_textbutton.dart';
+
 
 class MyJobPool extends StatefulWidget {
   const MyJobPool({super.key});

@@ -2,7 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mia_support_system/domain/model/jobs_model.dart';
 import 'package:mia_support_system/domain/service/jop_pool_service.dart';
 
-import 'package:mia_support_system/presentation/home/job_pool/view_model/job_pool_state.dart';
+import 'job_pool_state.dart';
+
 
 class JobPoolCubit extends Cubit<JobPoolState> {
   JobPoolCubit() : super(JobPoolInitial());
@@ -29,7 +30,6 @@ class JobPoolCubit extends Cubit<JobPoolState> {
     );
   }
 }
-//------------------------------------------------------------
 
 
 

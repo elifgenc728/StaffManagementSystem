@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mia_support_system/presentation/auth/login.dart';
-import 'package:mia_support_system/presentation/home/job_pool/view/job_pool.dart';
-import 'package:mia_support_system/presentation/home/views/my_job_pool.dart';
-import 'package:mia_support_system/presentation/home/new_job/view/new_job_page.dart';
 
-import '../home/views/panel_page.dart';
+import '../pages/job_pool/view/job_pool.dart';
+import '../pages/my_job_pool.dart';
+import '../pages/new_job_page.dart';
+import '../pages/panel_page.dart';
+
 
 class NavBar extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mia_support_system/presentation/widget/custom_user_alertdialog.dart';
 
-import '../home/views/detail_page.dart';
+import '../pages/detail_page.dart';
+
 
 class CustomDetailTextButton extends StatelessWidget {
   const CustomDetailTextButton({

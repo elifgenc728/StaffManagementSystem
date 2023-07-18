@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mia_support_system/presentation/home/views/detail_page.dart';
-import 'package:mia_support_system/presentation/viewModel/buttoncontrol_provider.dart';
+
 import 'package:provider/provider.dart';
-import '../../../widget/custom_chipwidget.dart';
-import '../../../widget/custom_cool_alert.dart';
+
+import '../widget/custom_chipwidget.dart';
+import '../widget/custom_cool_alert.dart';
+import 'detail_page.dart';
+import 'job_pool/view_model/buttoncontrol_provider.dart';
+
 
 class NewJobPage extends StatefulWidget {
   const NewJobPage({super.key});

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mia_support_system/presentation/auth/login.dart';
-import 'package:mia_support_system/presentation/auth/view_model/login_view_model.dart';
-import 'package:mia_support_system/presentation/home/job_pool/view_model/job_pool_view_model.dart';
-import 'package:mia_support_system/presentation/resources/theme_manager.dart';
-import 'package:mia_support_system/presentation/resources/theme_manager.dart';
-import 'package:mia_support_system/presentation/viewModel/buttoncontrol_provider.dart';
+
 import 'package:provider/provider.dart';
+
+import '../presentation/auth/login.dart';
+import '../presentation/pages/job_pool/view_model/buttoncontrol_provider.dart';
+import '../presentation/pages/job_pool/view_model/job_pool_view_model.dart';
+import '../presentation/resources/theme_manager.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
