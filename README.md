@@ -19,24 +19,24 @@
 
 ### Login Page
 
-![Alt text](image-2.png) 
+![Alt text](projects_screenshots/image-2.png) 
 
 ### Panel Page
 
 <p align="center">
-  <img alt="Light" src="./image-3.png" width="45%">
+  <img alt="Light" src="./projects_screenshots/image-3.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="./image-10.png" width="45%">
+  <img alt="Dark" src="./projects_screenshots/image-10.png" width="45%">
 
 </p>
 
 ### Job Pool Page
 <p align="center">
-  <img alt="Light" src="./image-4.png" width="45%">
+  <img alt="Light" src="./projects_screenshots/image-4.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="./image-5.png" width="45%">
+  <img alt="Dark" src="./projects_screenshots/image-5.png" width="45%">
   &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="./image-6.png" width="45%">
+  <img alt="Dark" src="./projects_screenshots/image-6.png" width="45%">
 </p>
 
 ### My Job Pool
@@ -44,17 +44,17 @@
 
 ### Job Detail Page
 <p align="center">
-  <img alt="Light" src="./image-8.png" width="45%">
+  <img alt="Light" src="./projects_screenshots/image-8.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="./image-9.png" width="45%">
+  <img alt="Dark" src="./projects_screenshots/image-9.png" width="45%">
 
 </p>
 
 ### New Job Page
 <p align="center">
-  <img alt="Light" src="./image-11.png" width="45%">
+  <img alt="Light" src="./projects_screenshots/image-11.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="./image-12.png" width="45%">
+  <img alt="Dark" src="./projects_screenshots/image-12.png" width="45%">
 
 </p>
 
