@@ -1,6 +1,6 @@
 {
-    "name": "mia_support_system",
-    "short_name": "mia_support_system",
+    "name": "staff_management_system",
+    "short_name": "StaffManagementSystem",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
