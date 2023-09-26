@@ -1,6 +1,6 @@
 # Flutter - Staff Management System
 - The purpose of this application is to enable the personnel working in the same workplace to divide the work among them and to communicate with each other.
-- I created [Mocki](https://mocki.io/fake-json-api) Fake API from a site and used it in my project.
+- In my project [Mocki](https://money.io/fake-json-api ) I created the APIs from the site.
 
 
 
